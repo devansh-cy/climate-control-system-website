@@ -81,6 +81,18 @@ const orderSchema = new mongoose.Schema({
   notes: {
     type: String
   },
+  gstin: {
+    type: String,
+    trim: true
+  },
+  timeline: {
+    type: String,
+    enum: ["ASAP", "1-3 months", "3-6 months", "6+ months"]
+  },
+  application: {
+    type: String,
+    trim: true
+  },
   createdAt: {
     type: Date
   },
@@ -103,7 +115,7 @@ orderSchema.methods.calculateTotals = function() {
   this.totalAmount = Math.round((subtotal + this.taxAmount) * 100) / 100;
 };
 
-// Generate a unique order number in format CCSI-2024-XXXXXX (or dynamic year)
+// Generate a unique order number in format CCSI-RFQ-YYYY-XXXXXX
 orderSchema.methods.generateOrderNumber = async function() {
   const currentYear = new Date().getFullYear();
   const lastOrder = await mongoose.model('Order')
@@ -117,9 +129,14 @@ orderSchema.methods.generateOrderNumber = async function() {
       if (!isNaN(lastNum)) {
         nextNum = lastNum + 1;
       }
+    } else if (parts.length === 4) {
+      const lastNum = parseInt(parts[3], 10);
+      if (!isNaN(lastNum)) {
+        nextNum = lastNum + 1;
+      }
     }
   }
-  return `CCSI-${currentYear}-${String(nextNum).padStart(6, '0')}`;
+  return `CCSI-RFQ-${currentYear}-${String(nextNum).padStart(6, '0')}`;
 };
 
 // Instance method toJSON to format output

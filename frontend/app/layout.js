@@ -1,4 +1,5 @@
 import "./globals.css";
+import { CartProvider } from "./context/CartContext";
 
 export const metadata = {
   title: "Climate Control System India | Industrial Chillers & Panel AC Manufacturer in Pune",
@@ -80,7 +81,11 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        <CartProvider>
+          {children}
+        </CartProvider>
+      </body>
     </html>
   );
 }

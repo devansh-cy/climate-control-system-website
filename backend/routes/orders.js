@@ -13,7 +13,7 @@ const isValidEmail = (email) => {
 // POST /api/orders - Create a new order
 router.post('/', validateOrder, async (req, res, next) => {
   try {
-    const { products, customer, shippingAddress, billingAddress, notes } = req.body;
+    const { products, customer, shippingAddress, billingAddress, notes, gstin, timeline, application } = req.body;
 
     // Fetch prices and names from Database to prevent pricing spoofing
     const enrichedProducts = [];
@@ -47,18 +47,21 @@ router.post('/', validateOrder, async (req, res, next) => {
       customer,
       shippingAddress,
       billingAddress: finalBillingAddress,
-      notes
+      notes,
+      gstin,
+      timeline,
+      application
     });
 
     const savedOrder = await newOrder.save();
 
     // 5. Simulate Email Notification
-    console.log(`[EMAIL SIMULATOR] Sending order confirmation email to ${customer.email} for Order Number: ${savedOrder.orderNumber}`);
+    console.log(`[EMAIL SIMULATOR] Sending B2B RFQ confirmation email to ${customer.email} for RFQ Number: ${savedOrder.orderNumber}`);
 
     res.status(201).json({
       success: true,
       data: savedOrder,
-      message: 'Order created'
+      message: 'RFQ created'
     });
   } catch (error) {
     next(error);

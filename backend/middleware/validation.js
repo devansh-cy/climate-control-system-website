@@ -1,7 +1,7 @@
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const validateOrder = (req, res, next) => {
-  const { products, customer, shippingAddress } = req.body;
+  const { products, customer, shippingAddress, gstin, timeline, application } = req.body;
 
   if (!customer || !customer.name || !customer.email || !customer.phone) {
     return res.status(400).json({ success: false, message: 'Validation error: customer name, email, and phone are required' });
@@ -33,6 +33,28 @@ const validateOrder = (req, res, next) => {
     if (isNaN(qty) || qty < 1) {
       return res.status(400).json({ success: false, message: `Validation error: product at index ${i} must have quantity >= 1` });
     }
+  }
+
+  // B2B RFQ Validation
+  if (gstin && gstin.trim()) {
+    const cleanGstin = gstin.trim();
+    const gstinRegex = /^[a-zA-Z0-9]{15}$/;
+    if (!gstinRegex.test(cleanGstin)) {
+      return res.status(400).json({ success: false, message: 'Validation error: GSTIN must be exactly 15 alphanumeric characters' });
+    }
+  }
+
+  if (!timeline) {
+    return res.status(400).json({ success: false, message: 'Validation error: timeline is required' });
+  }
+
+  const allowedTimelines = ["ASAP", "1-3 months", "3-6 months", "6+ months"];
+  if (!allowedTimelines.includes(timeline)) {
+    return res.status(400).json({ success: false, message: 'Validation error: invalid timeline value' });
+  }
+
+  if (!application || !application.trim()) {
+    return res.status(400).json({ success: false, message: 'Validation error: application is required' });
   }
 
   next();

@@ -1,9 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useCart } from "../context/CartContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { getTotalItems } = useCart();
+  const totalItems = getTotalItems();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -36,9 +39,44 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <a href="#contact" className="navbar-cta">
-            Request a Quote
-          </a>
+          <div className="navbar-actions" style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <a
+              href="/cart"
+              className="navbar-basket"
+              title="View RFQ Basket"
+              aria-label="View RFQ Basket"
+              style={{ position: "relative", display: "flex", alignItems: "center", color: "var(--primary)", textDecoration: "none" }}
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "24px", height: "24px" }}>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              {totalItems > 0 && (
+                <span
+                  className="basket-badge"
+                  style={{
+                    position: "absolute",
+                    top: "-6px",
+                    right: "-8px",
+                    background: "var(--accent)",
+                    color: "white",
+                    fontSize: "10px",
+                    fontWeight: "bold",
+                    borderRadius: "50%",
+                    padding: "2px 5px",
+                    minWidth: "16px",
+                    textAlign: "center",
+                    border: "1.5px solid white",
+                    lineHeight: "1"
+                  }}
+                >
+                  {totalItems}
+                </span>
+              )}
+            </a>
+            <a href="#contact" className="navbar-cta">
+              Request a Quote
+            </a>
+          </div>
           <button
             className="navbar-mobile-toggle"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -56,6 +94,9 @@ export default function Navbar() {
             {l.label}
           </a>
         ))}
+        <a href="/cart" onClick={() => setMenuOpen(false)} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          RFQ Basket ({totalItems})
+        </a>
         <a href="#contact" onClick={() => setMenuOpen(false)}>
           Request a Quote
         </a>
