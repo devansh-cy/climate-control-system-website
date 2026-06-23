@@ -28,8 +28,8 @@ export default function ContactForm() {
       message: message || "No message details provided.",
       quantityNeeded: 1,
       application: "Industrial Climate Control",
-      budgetRange: "Negotiable",
-      timeline: "Flexible"
+      budgetRange: "<50K",
+      timeline: "ASAP"
     };
 
     try {
