@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
                 addressLocality: "Pune",
                 addressRegion: "Maharashtra",
                 addressCountry: "IN",
-              },
+                },
               geo: {
                 "@type": "GeoCoordinates",
                 latitude: "18.5204",
@@ -80,7 +80,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
