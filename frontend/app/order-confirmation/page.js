@@ -3,6 +3,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Navbar from "../components/Navbar";
+import { API_BASE_URL } from "@/app/config";
 
 function RFQConfirmationContent() {
   const searchParams = useSearchParams();
@@ -14,7 +15,7 @@ function RFQConfirmationContent() {
     if (!rfqId) return;
     async function fetchRfq() {
       try {
-        const res = await fetch(`http://localhost:5001/api/orders/${rfqId}`);
+        const res = await fetch(`${API_BASE_URL}/api/orders/${rfqId}`);
         if (res.ok) {
           const json = await res.json();
           if (json.success) {
@@ -142,8 +143,8 @@ function RFQConfirmationContent() {
                   <tr key={item._id} style={{ borderBottom: "1px solid #f3f4f6", color: "var(--primary)" }}>
                     <td style={{ padding: "12px 0", fontWeight: "600" }}>{item.productName}</td>
                     <td style={{ padding: "12px 0", textAlign: "center" }}>{item.quantity}</td>
-                    <td style={{ padding: "12px 0", textAlign: "right" }}>{item.price ? `₹${item.price.toLocaleString()}` : "Quote Required"}</td>
-                    <td style={{ padding: "12px 0", textAlign: "right", fontWeight: "700" }}>{item.price ? `₹${(item.price * item.quantity).toLocaleString()}` : "—"}</td>
+                    <td style={{ padding: "12px 0", textAlign: "right" }}>{item.price ? `₹${item.price.toLocaleString('en-IN')}` : "Quote Required"}</td>
+                    <td style={{ padding: "12px 0", textAlign: "right", fontWeight: "700" }}>{item.price ? `₹${(item.price * item.quantity).toLocaleString('en-IN')}` : "—"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -155,15 +156,15 @@ function RFQConfirmationContent() {
             <div style={{ width: "250px", fontSize: "13px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px", color: "var(--text-light)" }}>
                 <span>Indicative Subtotal:</span>
-                <span style={{ fontWeight: "600" }}>₹{rfq.subtotalAmount.toLocaleString()}</span>
+                <span style={{ fontWeight: "600" }}>₹{rfq.subtotalAmount.toLocaleString('en-IN')}</span>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px", color: "var(--text-light)" }}>
                 <span>Estimated GST (18%):</span>
-                <span style={{ fontWeight: "600" }}>₹{rfq.taxAmount.toLocaleString()}</span>
+                <span style={{ fontWeight: "600" }}>₹{rfq.taxAmount.toLocaleString('en-IN')}</span>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", fontWeight: "800", fontSize: "15px", borderTop: "1px solid #f3f4f6", paddingTop: "8px", color: "var(--primary)" }}>
                 <span>Indicative Total:</span>
-                <span>₹{rfq.totalAmount.toLocaleString()}</span>
+                <span>₹{rfq.totalAmount.toLocaleString('en-IN')}</span>
               </div>
             </div>
           </div>

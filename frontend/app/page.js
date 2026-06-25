@@ -5,6 +5,7 @@ import ContactForm from "./components/ContactForm";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useCart } from "./context/CartContext";
+import { API_BASE_URL } from "@/app/config";
 
 const staticProducts = [
   {
@@ -103,7 +104,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await fetch("http://localhost:5001/api/products");
+        const res = await fetch(`${API_BASE_URL}/api/products`);
         if (res.ok) {
           const json = await res.json();
           if (json.success && json.data && json.data.length > 0) {
@@ -163,10 +164,6 @@ export default function Home() {
       <section className="hero" id="home">
         <div className="hero-inner">
           <div>
-            <div className="hero-badge">
-              <span className="hero-badge-dot" />
-              Established 2021 · Pune, Maharashtra
-            </div>
             <h1>
               Precision Engineered <span>Climate Solutions</span> for Industry
             </h1>
@@ -269,7 +266,7 @@ export default function Home() {
                           fontWeight: 700,
                         }}
                       >
-                        Indicative Price: ₹{Number(p.price).toLocaleString()}
+                        Indicative Price: ₹{Number(p.price).toLocaleString('en-IN')}
                       </p>
                     )}
                     <div style={{ display: "flex", gap: "10px", marginTop: "12px" }}>

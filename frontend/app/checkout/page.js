@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
 import { useRouter } from "next/navigation";
+import { API_BASE_URL } from "@/app/config";
 
 export default function CheckoutPage() {
   const { cartItems, getCartSummary, clearCart } = useCart();
@@ -97,7 +98,7 @@ export default function CheckoutPage() {
     };
 
     try {
-      const res = await fetch("http://localhost:5001/api/orders", {
+      const res = await fetch(`${API_BASE_URL}/api/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -255,27 +256,27 @@ export default function CheckoutPage() {
                         <span style={{ fontSize: "11px", color: "var(--text-light)" }}>Qty: {item.quantity}</span>
                       </div>
                       <span style={{ fontWeight: "600", textAlign: "right" }}>
-                        {item.price ? `₹${(Number(item.price) * item.quantity).toLocaleString()}` : "Quote Required"}
+                        {item.price ? `₹${(Number(item.price) * item.quantity).toLocaleString('en-IN')}` : "Quote Required"}
                       </span>
                     </div>
                   ))}
                 </div>
               </div>
-
+ 
               <div style={{ borderTop: "1px solid #f3f4f6", paddingTop: "16px" }}>
                 <h3 style={{ fontSize: "11px", fontWeight: "800", color: "#9ca3af", textTransform: "uppercase", marginBottom: "12px" }}>Quote Totals</h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px", fontSize: "14px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", color: "var(--text-light)" }}>
                     <span>Indicative Subtotal</span>
-                    <span style={{ fontWeight: "600", color: "var(--primary)" }}>₹{subtotal.toLocaleString()}</span>
+                    <span style={{ fontWeight: "600", color: "var(--primary)" }}>₹{subtotal.toLocaleString('en-IN')}</span>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between", color: "var(--text-light)", paddingBottom: "12px", borderBottom: "1px solid #f3f4f6" }}>
                     <span>GST (18%)</span>
-                    <span style={{ fontWeight: "600", color: "var(--primary)" }}>₹{tax.toLocaleString()}</span>
+                    <span style={{ fontWeight: "600", color: "var(--primary)" }}>₹{tax.toLocaleString('en-IN')}</span>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", paddingTop: "8px" }}>
                     <span style={{ fontSize: "14px", fontWeight: "800", color: "var(--primary)" }}>Total Indicative Amount</span>
-                    <span style={{ fontSize: "18px", fontWeight: "900", color: "var(--primary)" }}>₹{total.toLocaleString()}</span>
+                    <span style={{ fontSize: "18px", fontWeight: "900", color: "var(--primary)" }}>₹{total.toLocaleString('en-IN')}</span>
                   </div>
                 </div>
               </div>

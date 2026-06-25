@@ -106,7 +106,7 @@ export default function CartPage() {
 
                     {/* Col 2: Price */}
                     <div style={{ textAlign: "right", fontSize: "15px", fontWeight: "600" }}>
-                      {item.price ? `₹${Number(item.price).toLocaleString()}` : "Quote Required"}
+                      {item.price ? `₹${Number(item.price).toLocaleString('en-IN')}` : "Quote Required"}
                     </div>
 
                     {/* Col 3: Qty selector */}
@@ -128,7 +128,7 @@ export default function CartPage() {
 
                     {/* Col 4: Subtotal */}
                     <div style={{ textAlign: "right", fontSize: "15px", fontWeight: "700", color: "var(--primary)" }}>
-                      {item.price ? `₹${(Number(item.price) * item.quantity).toLocaleString()}` : "—"}
+                      {item.price ? `₹${(Number(item.price) * item.quantity).toLocaleString('en-IN')}` : "—"}
                     </div>
                   </div>
                 );
@@ -145,15 +145,15 @@ export default function CartPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: "16px", fontSize: "14px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", color: "var(--text-light)" }}>
                   <span>Indicative Subtotal</span>
-                  <span style={{ fontWeight: "600", color: "var(--primary)" }}>₹{subtotal.toLocaleString()}</span>
+                  <span style={{ fontWeight: "600", color: "var(--primary)" }}>₹{subtotal.toLocaleString('en-IN')}</span>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", color: "var(--text-light)", paddingBottom: "16px", borderBottom: "1px solid #f3f4f6" }}>
                   <span>Estimated GST (18%)</span>
-                  <span style={{ fontWeight: "600", color: "var(--primary)" }}>₹{tax.toLocaleString()}</span>
+                  <span style={{ fontWeight: "600", color: "var(--primary)" }}>₹{tax.toLocaleString('en-IN')}</span>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", paddingTop: "8px" }}>
                   <span style={{ fontSize: "16px", fontWeight: "800", color: "var(--primary)" }}>Total Indicative Amount</span>
-                  <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--primary)" }}>₹{total.toLocaleString()}</span>
+                  <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--primary)" }}>₹{total.toLocaleString('en-IN')}</span>
                 </div>
               </div>
 
