@@ -1,12 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useCart } from "../context/CartContext";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { getTotalItems } = useCart();
   const totalItems = getTotalItems();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -15,18 +18,18 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { label: "Products", href: "#products" },
-    { label: "Manufacturing", href: "#manufacturing" },
-    { label: "Why CCSI", href: "#why-us" },
-    { label: "Industries", href: "#industries" },
-    { label: "Contact", href: "#contact" },
+    { label: "Products", href: isHome ? "#products" : "/#products" },
+    { label: "Manufacturing", href: isHome ? "#manufacturing" : "/#manufacturing" },
+    { label: "Why CCSI", href: isHome ? "#why-us" : "/#why-us" },
+    { label: "Industries", href: isHome ? "#industries" : "/#industries" },
+    { label: "Contact", href: isHome ? "#contact" : "/#contact" },
   ];
 
   return (
     <>
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="navbar-inner">
-          <a href="#" className="navbar-logo">
+          <a href={isHome ? "#" : "/"} className="navbar-logo">
             <div className="navbar-logo-icon">CC</div>
             <div className="navbar-logo-text">
               Climate Control <span>System India</span>
@@ -73,7 +76,7 @@ export default function Navbar() {
                 </span>
               )}
             </a>
-            <a href="#contact" className="navbar-cta">
+            <a href={isHome ? "#contact" : "/#contact"} className="navbar-cta">
               Request a Quote
             </a>
           </div>
@@ -97,7 +100,7 @@ export default function Navbar() {
         <a href="/cart" onClick={() => setMenuOpen(false)} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           RFQ Basket ({totalItems})
         </a>
-        <a href="#contact" onClick={() => setMenuOpen(false)}>
+        <a href={isHome ? "#contact" : "/#contact"} onClick={() => setMenuOpen(false)}>
           Request a Quote
         </a>
       </div>
