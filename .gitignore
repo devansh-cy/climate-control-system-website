@@ -29,3 +29,8 @@ Climate Control System India (4)_260619_191045.pdf
 climate_control_requirements..pdf
 walkthrough.md
 
+# Test scripts (Local only, do not push)
+backend/test.js
+backend/frontend-test.js
+backend/stress-test.js
+
