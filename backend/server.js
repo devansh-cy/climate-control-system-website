@@ -88,7 +88,8 @@ app.use('/api/contact', formSubmitLimiter);
         Product.find()
           .then(async (products) => {
             const hasUnsplash = products.some(p => p.images && p.images[0] && p.images[0].includes('unsplash.com'));
-            if (products.length === 0 || hasUnsplash) {
+            const { sampleProducts } = require('./seed');
+            if (products.length !== sampleProducts.length || hasUnsplash) {
               console.log('Seeding/Re-seeding database with PDF catalog in development...');
               await seedDatabase(false);
               console.log('Database seeding completed successfully.');
