@@ -7,6 +7,14 @@ import { useState, useEffect } from "react";
 import { useCart } from "./context/CartContext";
 import { API_BASE_URL } from "@/app/config";
 
+const LogoHeading = () => (
+  <span style={{ fontWeight: 900, letterSpacing: "0.03em" }}>
+    <span style={{ color: "#00aeef" }}>CLIMATE</span>{" "}
+    <span style={{ color: "#e31e24" }}>CONTROL</span>{" "}
+    <span style={{ color: "#fbb03b" }}>SYSTEM INDIA</span>
+  </span>
+);
+
 const staticProducts = [
   {
     _id: "p1",
@@ -66,34 +74,95 @@ const staticProducts = [
 
 const whyCards = [
   {
-    icon: "🏭",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", color: "var(--primary)" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
     title: "Made in Pune",
     desc: "Manufactured in our own facility using premium-grade raw materials from certified vendors.",
   },
   {
-    icon: "🔧",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", color: "var(--primary)" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
     title: "Custom Engineering",
     desc: "Every unit can be tailored to your exact specifications — capacity, voltage, dimensions, and more.",
   },
   {
-    icon: "✅",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", color: "var(--primary)" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
     title: "Quality Tested",
     desc: "Each product undergoes rigorous quality checks on multiple parameters before dispatch.",
   },
   {
-    icon: "🚚",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", color: "var(--primary)" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9v12z" />
+        <circle cx="7.5" cy="18.5" r="1.5" stroke="currentColor" strokeWidth={1.8} fill="none" />
+        <circle cx="16.5" cy="18.5" r="1.5" stroke="currentColor" strokeWidth={1.8} fill="none" />
+      </svg>
+    ),
     title: "Pan-India Delivery",
     desc: "Extensive distribution network ensuring timely delivery across India.",
   },
 ];
 
 const industries = [
-  { icon: "⚙️", name: "CNC & Machine Tools" },
-  { icon: "🧪", name: "Pharmaceuticals" },
-  { icon: "🏗️", name: "Heavy Engineering" },
-  { icon: "🍶", name: "Plastics & Moulding" },
-  { icon: "🖥️", name: "IT & Telecom" },
-  { icon: "🔌", name: "Electrical Panels" },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", margin: "0 auto 8px" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+      </svg>
+    ),
+    name: "CNC & Machine Tools"
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", margin: "0 auto 8px" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+      </svg>
+    ),
+    name: "Pharmaceuticals"
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", margin: "0 auto 8px" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
+    name: "Heavy Engineering"
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", margin: "0 auto 8px" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+      </svg>
+    ),
+    name: "Plastics & Moulding"
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", margin: "0 auto 8px" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    name: "IT & Telecom"
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "32px", height: "32px", margin: "0 auto 8px" }}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    name: "Electrical Panels"
+  },
 ];
 
 export default function Home() {
@@ -412,11 +481,18 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-white"
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
             >
-              🛒 Buy on IndiaMart
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "20px", height: "20px" }}>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              Buy on IndiaMart
             </a>
-            <a href="#contact" className="btn-ghost">
-              ✉️ Request Custom Quote
+            <a href="#contact" className="btn-ghost" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "20px", height: "20px" }}>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Request Custom Quote
             </a>
           </div>
         </div>
@@ -434,7 +510,9 @@ export default function Home() {
           </div>
           <div className="contact-grid">
             <div className="contact-info">
-              <h3>Climate Control System India</h3>
+              <h3 style={{ fontSize: "24px", fontWeight: "800", marginBottom: "16px" }}>
+                <LogoHeading />
+              </h3>
               <p>
                 Established in 2021 under the guidance of Mr. S. A.
                 Suryawanshi, we are a Pune-based manufacturer and service
@@ -442,7 +520,12 @@ export default function Home() {
                 equipment.
               </p>
               <div className="contact-detail">
-                <div className="contact-detail-icon">📍</div>
+                <div className="contact-detail-icon">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "20px", height: "20px", color: "var(--primary)" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
                 <div>
                   <div className="contact-detail-label">Address</div>
                   <div className="contact-detail-value">
@@ -451,7 +534,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="contact-detail">
-                <div className="contact-detail-icon">📞</div>
+                <div className="contact-detail-icon">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "20px", height: "20px", color: "var(--primary)" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
                 <div>
                   <div className="contact-detail-label">Phone</div>
                   <div className="contact-detail-value">
@@ -460,7 +547,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="contact-detail">
-                <div className="contact-detail-icon">✉️</div>
+                <div className="contact-detail-icon">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "20px", height: "20px", color: "var(--primary)" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
                 <div>
                   <div className="contact-detail-label">Email</div>
                   <div className="contact-detail-value">
@@ -469,7 +560,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="contact-detail">
-                <div className="contact-detail-icon">🕐</div>
+                <div className="contact-detail-icon">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: "20px", height: "20px", color: "var(--primary)" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
                 <div>
                   <div className="contact-detail-label">Working Hours</div>
                   <div className="contact-detail-value">
@@ -497,11 +592,11 @@ export default function Home() {
               >
                 <div
                   className="navbar-logo-icon"
-                  style={{ background: "white", color: "var(--primary)" }}
+                  style={{ background: "#00aeef", color: "white" }}
                 >
                   CC
                 </div>
-                <strong>Climate Control System India</strong>
+                <strong><LogoHeading /></strong>
               </div>
               <p>
                 Pune-based manufacturer of industrial chillers, panel air
@@ -534,7 +629,7 @@ export default function Home() {
                 <li><a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a></li>
                 <li>
                   <a href="mailto:info@climatecontrolsystemindia.com">
-                    info@climatecontrolsystemindia.com
+                     info@climatecontrolsystemindia.com
                   </a>
                 </li>
                 <li><a>Pune, Maharashtra, India</a></li>

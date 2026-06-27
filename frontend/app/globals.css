@@ -222,6 +222,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ===== WHY US ===== */
+#why-us {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), url('/images/industrial_blueprint_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .why-card {
   padding: 32px 24px; border-radius: var(--radius-md);

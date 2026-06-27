@@ -29,10 +29,12 @@ export default function Navbar() {
     <>
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="navbar-inner">
-          <a href={isHome ? "#" : "/"} className="navbar-logo">
-            <div className="navbar-logo-icon">CC</div>
-            <div className="navbar-logo-text">
-              Climate Control <span>System India</span>
+          <a href={isHome ? "#" : "/"} className="navbar-logo" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
+            <div className="navbar-logo-icon" style={{ background: "#00aeef" }}>CC</div>
+            <div className="navbar-logo-text" style={{ fontFamily: "'Inter', sans-serif", fontSize: "16px", letterSpacing: "0.02em", lineHeight: "1" }}>
+              <span style={{ color: "#00aeef", fontWeight: 900 }}>CLIMATE</span>{" "}
+              <span style={{ color: "#e31e24", fontWeight: 900 }}>CONTROL</span>{" "}
+              <span style={{ color: "#fbb03b", fontWeight: 900, display: "block", fontSize: "9px", letterSpacing: "0.15em", marginTop: "4px" }}>SYSTEM INDIA</span>
             </div>
           </a>
           <ul className="navbar-links">
