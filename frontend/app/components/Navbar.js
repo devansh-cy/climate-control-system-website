@@ -30,7 +30,7 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="navbar-inner">
           <a href={isHome ? "#" : "/"} className="navbar-logo" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div className="navbar-logo-icon" style={{ background: "#00aeef" }}>CC</div>
+            <img src="/images/logo.png" alt="Climate Control System India Logo" style={{ width: "48px", height: "auto" }} />
             <div className="navbar-logo-text" style={{ fontFamily: "'Inter', sans-serif", fontSize: "16px", letterSpacing: "0.02em", lineHeight: "1" }}>
               <span style={{ color: "#00aeef", fontWeight: 900 }}>CLIMATE</span>{" "}
               <span style={{ color: "#e31e24", fontWeight: 900 }}>CONTROL</span>{" "}

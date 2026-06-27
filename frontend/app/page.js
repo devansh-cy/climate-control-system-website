@@ -590,12 +590,7 @@ export default function Home() {
                   gap: "10px",
                 }}
               >
-                <div
-                  className="navbar-logo-icon"
-                  style={{ background: "#00aeef", color: "white" }}
-                >
-                  CC
-                </div>
+                <img src="/images/logo.png" alt="Climate Control System India Logo" style={{ width: "48px", height: "auto", background: "white", padding: "2px", borderRadius: "4px" }} />
                 <strong><LogoHeading /></strong>
               </div>
               <p>
