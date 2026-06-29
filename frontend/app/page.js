@@ -514,7 +514,7 @@ export default function Home() {
           </p>
           <div className="cta-buttons">
             <a
-              href="https://www.indiamart.com/climate-control-system-india/"
+              href="https://dir.indiamart.com/impcat/climate-control-system.html"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-white"
@@ -667,7 +667,7 @@ export default function Home() {
                 <li><a>Pune, Maharashtra, India</a></li>
                 <li>
                   <a
-                    href="https://www.indiamart.com/climate-control-system-india/"
+                    href="https://dir.indiamart.com/impcat/climate-control-system.html"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
