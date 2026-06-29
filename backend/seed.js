@@ -4,9 +4,104 @@ require('dotenv').config();
 
 const sampleProducts = [
   {
-    name: "CCSI Wall Mount Panel Air Conditioner",
+    name: "CCSI Industrial Oil Cooling Chiller",
+    category: "Chiller",
+    description: "High-performance air-cooled industrial oil cooling chiller equipped with solenoid valve, delay timer, single phase preventer, and LP/HP switch. Perfect for machining centers, CNC lathes, EDM, NC SPM, and hydraulic presses.",
+    specifications: {
+      coolingCapacity: 5250,
+      power: 2500,
+      refrigerant: "R22",
+      dimensions: "755 x 505 x 930 mm",
+      weight: 90,
+      maxAmbientTemp: 45,
+      workingTempRange: "10°C to 50°C"
+    },
+    images: ["/images/products/oil-chiller.png"],
+    price: 65000,
+    inStock: true,
+    applications: ["Machining Centre", "CNC Lathe", "EDM", "NC SPM", "Hydraulic Press"],
+    featured: true
+  },
+  {
+    name: "CCSI Refrigerated Oil Chiller",
+    category: "Chiller",
+    description: "Industrial grade refrigerated oil chiller designed for hydraulic and cooling loops. Sturdy, reliable, and energy efficient construction.",
+    specifications: {
+      coolingCapacity: 2700,
+      power: 1600,
+      refrigerant: "R22",
+      dimensions: "700 x 500 x 825 mm",
+      weight: 80,
+      maxAmbientTemp: 45,
+      workingTempRange: "10°C to 50°C"
+    },
+    images: ["/images/products/oil-chiller.png"],
+    price: 40000,
+    inStock: true,
+    applications: ["Hydraulic Power Packs", "Industrial Machinery Cooling", "Gearbox Cooling"],
+    featured: false
+  },
+  {
+    name: "CCSI Spindle Oil Chiller",
+    category: "Chiller",
+    description: "Precision spindle oil cooling chiller with optimum tolerance capacity, heat resistance, long functional life, single phase preventer, solenoid valve, and digital control system.",
+    specifications: {
+      coolingCapacity: 3500,
+      power: 1800,
+      refrigerant: "R22",
+      dimensions: "720 x 500 x 850 mm",
+      weight: 85,
+      maxAmbientTemp: 45,
+      workingTempRange: "10°C to 50°C"
+    },
+    images: ["/images/products/oil-chiller.png"],
+    price: 65000,
+    inStock: true,
+    applications: ["Machining Center Spindles", "CNC Lathe Spindles", "EDM Spindle Cooling", "NC SPM Spindles", "Hydraulic Presses"],
+    featured: true
+  },
+  {
+    name: "CCSI Hydraulic Oil Chiller",
+    category: "Chiller",
+    description: "Easy-to-operate hydraulic oil chiller with hermetically sealed air cooled immersion compressor, digital controller, built-in overload protection, LP/HP switch, and safety fuses.",
+    specifications: {
+      coolingCapacity: 5250,
+      power: 2500,
+      refrigerant: "R22",
+      dimensions: "755 x 505 x 930 mm",
+      weight: 90,
+      maxAmbientTemp: 45,
+      workingTempRange: "10°C to 50°C"
+    },
+    images: ["/images/products/oil-chiller.png"],
+    price: 55000,
+    inStock: true,
+    applications: ["Hydraulic Presses", "Machining Centres", "CNC Lathes", "EDM", "NC SPM"],
+    featured: false
+  },
+  {
+    name: "CCSI Industrial Air Conditioner",
     category: "Panel AC",
-    description: "Robust wall-mounted enclosure cooling units engineered to regulate thermal loads inside automation cabinets and electrical panels. Built to survive harsh high-ambient industrial conditions.",
+    description: "Heavy-duty 4-star rated industrial air conditioner built for high durability, lightweight design, easy installation, and accurate thermal regulation.",
+    specifications: {
+      coolingCapacity: 5000,
+      power: 2200,
+      refrigerant: "R22",
+      dimensions: "1400 x 400 x 330 mm",
+      weight: 42,
+      maxAmbientTemp: 55,
+      workingTempRange: "+10°C to +55°C"
+    },
+    images: ["/images/products/panel-ac.png"],
+    price: 70000,
+    inStock: true,
+    applications: ["Industrial Control Rooms", "Automation Enclosures", "Operator Cabins"],
+    featured: false
+  },
+  {
+    name: "CCSI Panel Air Conditioner",
+    category: "Panel AC",
+    description: "4-star rated electrical panel air conditioner providing optimum cooling with smooth finish, minimum maintenance, weekly filter alarm, and digital temperature controller.",
     specifications: {
       coolingCapacity: 1600,
       power: 800,
@@ -17,19 +112,15 @@ const sampleProducts = [
       workingTempRange: "+10°C to +55°C"
     },
     images: ["/images/products/panel-ac.png"],
-    price: 45000,
+    price: 24000,
     inStock: true,
-    applications: [
-      "CNC Machine Tools", "Drive Panels", "PLC Panels", "Instrument Panels",
-      "Robotics Enclosures", "Medical Electronic Equipment", "Gas Analyzer Equipment",
-      "Crane/Material Handling Equipment", "Any Panel Housing Sensitive Electronic Components"
-    ],
+    applications: ["Electrical Control Cabinets", "Automation Enclosures", "Server Cabinets"],
     featured: true
   },
   {
     name: "CCSI Ductable Panel Air Conditioner",
     category: "Panel AC",
-    description: "Ductable cabinet air conditioning system providing optimal thermal control for specialized electrical systems requiring clean/external air ducting.",
+    description: "High strength, precisely engineered ductable panel cooler offering optimum cooling solutions for panels requiring external air routing.",
     specifications: {
       coolingCapacity: 2000,
       power: 1100,
@@ -40,78 +131,105 @@ const sampleProducts = [
       workingTempRange: "+10°C to +55°C"
     },
     images: ["/images/products/panel-ac.png"],
-    price: 65000,
+    price: 40000,
     inStock: true,
-    applications: [
-      "CPU/Server Enclosures", "Process Control Equipment", "Clean Rooms",
-      "High-temperature Manufacturing Zones", "Duct-connected Industrial Enclosures"
-    ],
+    applications: ["CNC Machine Tools", "Enclosures in Dusty Environments", "Process Control Rooms"],
     featured: false
   },
   {
-    name: "CCSI Water Cooled Panel Air Conditioner",
-    category: "Panel AC",
-    description: "High performance panel cooling unit utilizing water cooling loops to dissipate cabinet heat. Specially designed for extremely dusty, high-ambient foundry applications.",
+    name: "CCSI Online Water Chiller",
+    category: "Chiller",
+    description: "Precision online water chiller designed specifically for laser machine cooling, featuring highly stable temperature control.",
     specifications: {
-      coolingCapacity: 2700,
-      power: 1200,
+      coolingCapacity: 5250,
+      power: 2000,
       refrigerant: "R22",
-      dimensions: "800 x 460 x 360 mm",
-      weight: 45,
+      dimensions: "755 x 505 x 930 mm",
+      weight: 90,
+      maxAmbientTemp: 45,
+      workingTempRange: "10°C to 50°C"
+    },
+    images: ["/images/products/water-chiller.png"],
+    price: 120000,
+    inStock: true,
+    applications: ["Laser Cutting Machines", "Medical Lasers", "Industrial Packaging Lines"],
+    featured: true
+  },
+  {
+    name: "CCSI Water Cooling Chiller Machine",
+    category: "Chiller",
+    description: "Industrial heavy-duty water cooling chiller machine boasting robust construction, sturdiness, and optimum performance under continuous operation.",
+    specifications: {
+      coolingCapacity: 14000,
+      power: 5200,
+      refrigerant: "R22",
+      dimensions: "950 x 650 x 1100 mm",
+      weight: 180,
+      maxAmbientTemp: 50,
+      workingTempRange: "5°C to 45°C"
+    },
+    images: ["/images/products/water-chiller.png"],
+    price: 2000000,
+    inStock: true,
+    applications: ["Plastic Moulding Plants", "Extrusion Lines", "Centralized Industrial Cooling"],
+    featured: true
+  },
+  {
+    name: "CCSI Air To Air Heat Exchanger",
+    category: "Panel AC",
+    description: "Mild steel air-to-air heat exchanger, air-cooled, 240V operating voltage. Features precise construction, optimum functionality, and elevated service life.",
+    specifications: {
+      coolingCapacity: 1000,
+      power: 240,
+      refrigerant: "Air",
+      dimensions: "600 x 300 x 150 mm",
+      weight: 12,
       maxAmbientTemp: 60,
       workingTempRange: "+10°C to +60°C"
     },
     images: ["/images/products/panel-ac.png"],
-    price: 95000,
+    price: 11000,
     inStock: true,
-    applications: [
-      "Steel Plants & Foundries", "Chemical Processing Facilities",
-      "High Ambient Dusty Sites", "Any Panel Housing Sensitive Electronic Components"
-    ],
+    applications: ["Electrical Enclosures", "Control Cabinets", "Telecom Booths"],
     featured: false
   },
   {
-    name: "CCSI Outdoor Panel Air Conditioner",
-    category: "Panel AC",
-    description: "Weatherproof and dustproof panel cooler engineered to protect outdoor electrical cabinets, telecom hubs, and field enclosures.",
+    name: "CCSI Water Cooled Scroll Chiller",
+    category: "Chiller",
+    description: "Water-cooled scroll chiller engineered for low power consumption, less heat emission, and smooth functioning in centralized cooling setups.",
     specifications: {
-      coolingCapacity: 1000,
-      power: 600,
-      refrigerant: "R134a",
-      dimensions: "750 x 380 x 280 mm",
-      weight: 30,
-      maxAmbientTemp: 55,
-      workingTempRange: "-10°C to +55°C"
-    },
-    images: ["/images/products/panel-ac.png"],
-    price: 55000,
-    inStock: true,
-    applications: [
-      "Telecom Equipment", "Outdoor Power Cabinets", "Remote Sub-stations",
-      "Solar Control Panels", "Traffic Control Cabinets"
-    ],
-    featured: false
-  },
-  {
-    name: "CCSI Rack AC",
-    category: "Panel AC",
-    description: "Server rack mount refrigeration system engineered to maintain high-density computer hardware at optimal operating temperatures.",
-    specifications: {
-      coolingCapacity: 1000,
-      power: 650,
-      refrigerant: "R134a",
-      dimensions: "482 x 600 x 266 mm (6U)",
-      weight: 28,
+      coolingCapacity: 10500,
+      power: 5000,
+      refrigerant: "R22",
+      dimensions: "1720 x 758 x 693 mm",
+      weight: 300,
       maxAmbientTemp: 45,
-      workingTempRange: "+15°C to +40°C"
+      workingTempRange: "10°C to 50°C"
     },
-    images: ["/images/products/rack-ac.png"],
-    price: 50000,
+    images: ["/images/products/water-chiller.png"],
+    price: 85000,
     inStock: true,
-    applications: [
-      "IT Industries", "Server Rooms & Data Center Enclosures", "Telecom Sectors"
-    ],
-    featured: true
+    applications: ["Heavy Machinery Cooling", "Plastics & Moulding", "Chemical Processing"],
+    featured: false
+  },
+  {
+    name: "CCSI Water Soluble Coolant Chiller",
+    category: "Chiller",
+    description: "Highly flexible, water soluble coolant chiller designed for easy installation and increased cooling effectiveness in machine tool coolant sumps.",
+    specifications: {
+      coolingCapacity: 3500,
+      power: 1500,
+      refrigerant: "R22",
+      dimensions: "650 x 450 x 800 mm",
+      weight: 75,
+      maxAmbientTemp: 45,
+      workingTempRange: "10°C to 50°C"
+    },
+    images: ["/images/products/water-chiller.png"],
+    price: 80000,
+    inStock: true,
+    applications: ["CNC Machining Centers", "Grinding Sump Systems", "Metal Cutting Machines"],
+    featured: false
   },
   {
     name: "CCSI Industrial Dehumidifier",
@@ -129,11 +247,8 @@ const sampleProducts = [
     images: ["/images/products/dehumidifier.png"],
     price: 28000,
     inStock: true,
-    applications: [
-      "Pharma Warehouses", "Dry Storage Facilities", "Printing Press Areas",
-      "Food & Chemical Preservation", "Archive Vaults"
-    ],
-    featured: true
+    applications: ["Pharma Warehouses", "Dry Storage Facilities", "Printing Press Areas", "Food & Chemical Preservation"],
+    featured: false
   },
   {
     name: "CCSI Refrigerated Air Dryer",
@@ -151,13 +266,8 @@ const sampleProducts = [
     images: ["/images/products/air-dryer.png"],
     price: 35000,
     inStock: true,
-    applications: [
-      "Drying Air For Use In Commercial Or Industrial Processes That Demand Dry Air",
-      "Telecom Industry (Pressurizes Underground Cables To Repel Moisture And Avoid Shorts)",
-      "Painting Applications", "Pneumatic Tools", "Textile Manufacturing",
-      "Pneumatic Control Systems"
-    ],
-    featured: true
+    applications: ["Pneumatic Tool Lines", "Packaging Machinery", "Paint Spray Systems", "Textile Manufacturing"],
+    featured: false
   },
   {
     name: "CCSI Fan Tray",
@@ -175,161 +285,7 @@ const sampleProducts = [
     images: ["/images/products/rack-ac.png"],
     price: 15000,
     inStock: true,
-    applications: [
-      "Network Racks", "Server Enclosures", "IT Industries", "Telecom Sector"
-    ],
-    featured: false
-  },
-  {
-    name: "CCSI Combi-Chiller",
-    category: "Chiller",
-    description: "Advanced integrated cooling center providing simultaneous refrigeration for spindles, machine panels, and hydraulic oil loops.",
-    specifications: {
-      coolingCapacity: 10500,
-      power: 5000,
-      refrigerant: "R22",
-      dimensions: "1720 x 758 x 693 mm",
-      weight: 300,
-      maxAmbientTemp: 45,
-      workingTempRange: "10°C to 50°C"
-    },
-    images: ["/images/products/water-chiller.png"],
-    price: 225000,
-    inStock: true,
-    applications: [
-      "CNC/VMC Machine Tools", "CNC Lathes", "Machine Centers",
-      "Metal Cutting Operations", "Metal Forming", "Sheet Metal Shop"
-    ],
-    featured: true
-  },
-  {
-    name: "CCSI Oil Chiller",
-    category: "Chiller",
-    description: "Spindle cooling and hydraulic oil chiller engineered to keep oil viscosity stable under heavy duty operating runs.",
-    specifications: {
-      coolingCapacity: 5250,
-      power: 2500,
-      refrigerant: "R22",
-      dimensions: "755 x 505 x 930 mm",
-      weight: 90,
-      maxAmbientTemp: 45,
-      workingTempRange: "10°C to 50°C"
-    },
-    images: ["/images/products/oil-chiller.png"],
-    price: 135000,
-    inStock: true,
-    applications: [
-      "Spindle Gearboxes", "Spindle Motors", "Spindle Bearings", "Spindle Drive Cooling",
-      "Metal Cutting", "Metal Forming", "General Purpose Hydraulic Equipment"
-    ],
-    featured: true
-  },
-  {
-    name: "CCSI Water Chiller (With Integrated Tank)",
-    category: "Chiller",
-    description: "Self-contained water cooling unit integrated with an insulated storage tank and process pump. Ideal for machines requiring a dedicated buffer volume.",
-    specifications: {
-      coolingCapacity: 7000,
-      power: 3200,
-      refrigerant: "R22",
-      dimensions: "800 x 600 x 950 mm",
-      weight: 120,
-      maxAmbientTemp: 45,
-      workingTempRange: "10°C to 45°C"
-    },
-    images: ["/images/products/water-chiller.png"],
-    price: 165000,
-    inStock: true,
-    applications: [
-      "Plastic Molding Machine", "Laser Machine", "Robotics Welding Machine",
-      "General Machining"
-    ],
-    featured: false
-  },
-  {
-    name: "CCSI Water Chiller",
-    category: "Chiller",
-    description: "High performance industrial water and glycol chillers designed for CNC cooling, packaging lines, and process machinery.",
-    specifications: {
-      coolingCapacity: 5250,
-      power: 2000,
-      refrigerant: "R22",
-      dimensions: "755 x 505 x 930 mm",
-      weight: 90,
-      maxAmbientTemp: 45,
-      workingTempRange: "10°C to 50°C"
-    },
-    images: ["/images/products/water-chiller.png"],
-    price: 125000,
-    inStock: true,
-    applications: [
-      "Plastic And Packaging Industry", "Food And Beverage Industry",
-      "Pharmaceutical Production", "Textile Industry", "RO Systems"
-    ],
-    featured: true
-  },
-  {
-    name: "CCSI Immersion Chiller",
-    category: "Chiller",
-    description: "Immersive process cooling unit designed to sit directly inside fluid or coolant sumps. Eliminates the need for external plumbing and pumps.",
-    specifications: {
-      coolingCapacity: 3500,
-      power: 1500,
-      refrigerant: "R22",
-      dimensions: "650 x 450 x 800 mm",
-      weight: 75,
-      maxAmbientTemp: 45,
-      workingTempRange: "10°C to 50°C"
-    },
-    images: ["/images/products/water-chiller.png"],
-    price: 115000,
-    inStock: true,
-    applications: [
-      "Metal Cutting", "General Purpose Machining Equipment", "CNC Machine Tools", "Sump Cooling"
-    ],
-    featured: false
-  },
-  {
-    name: "CCSI Water Cooled Chiller",
-    category: "Chiller",
-    description: "Heavy duty water-cooled chiller providing stable industrial process cooling by rejecting heat into central cooling tower systems.",
-    specifications: {
-      coolingCapacity: 14000,
-      power: 5200,
-      refrigerant: "R22",
-      dimensions: "950 x 650 x 1100 mm",
-      weight: 180,
-      maxAmbientTemp: 50,
-      workingTempRange: "5°C to 45°C"
-    },
-    images: ["/images/products/water-chiller.png"],
-    price: 185000,
-    inStock: true,
-    applications: [
-      "Heavy Machinery Cooling", "Plastic Extruders", "Chemical Reactors", "General Purpose Machining"
-    ],
-    featured: false
-  },
-  {
-    name: "CCSI Glycol Chiller",
-    category: "Chiller",
-    description: "Low temperature process cooling unit designed to pump sub-zero glycol-water mixes for food processing, breweries, and pharmaceutical loops.",
-    specifications: {
-      coolingCapacity: 8750,
-      power: 4200,
-      refrigerant: "R22",
-      dimensions: "850 x 600 x 1000 mm",
-      weight: 140,
-      maxAmbientTemp: 45,
-      workingTempRange: "-10°C to +30°C"
-    },
-    images: ["/images/products/water-chiller.png"],
-    price: 155000,
-    inStock: true,
-    applications: [
-      "Food and Beverage Industry", "Brewery/Winery Fermentation",
-      "Pharmaceutical Production", "Low-Temp Process Loops"
-    ],
+    applications: ["Network Racks", "Server Enclosures", "IT Industries", "Telecom Sector"],
     featured: false
   }
 ];
