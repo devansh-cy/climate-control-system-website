@@ -1,11 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { API_BASE_URL } from "@/app/config";
 
-export default function ContactForm() {
+export default function ContactForm({ initialProduct = "", initialMessage = "" }) {
   const [status, setStatus] = useState({ type: "", message: "" });
   const [loading, setLoading] = useState(false);
+  const [productVal, setProductVal] = useState("");
+  const [messageVal, setMessageVal] = useState("");
+
+  useEffect(() => {
+    if (initialProduct) {
+      setProductVal(initialProduct);
+    }
+  }, [initialProduct]);
+
+  useEffect(() => {
+    if (initialMessage) {
+      setMessageVal(initialMessage);
+    }
+  }, [initialMessage]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,6 +64,8 @@ export default function ContactForm() {
           message: "Thank you! Your enquiry has been received by our engineering team."
         });
         e.target.reset();
+        setProductVal("");
+        setMessageVal("");
       } else {
         throw new Error(result.message || "Failed to submit enquiry.");
       }
@@ -95,15 +111,20 @@ export default function ContactForm() {
       </div>
       <div className="form-group">
         <label htmlFor="product">Product of Interest</label>
-        <select id="product" name="product">
+        <select
+          id="product"
+          name="product"
+          value={productVal}
+          onChange={(e) => setProductVal(e.target.value)}
+        >
           <option value="">Select a product category</option>
-          <option>Panel Air Conditioner</option>
-          <option>Water Chiller</option>
-          <option>Oil Cooler / Hydraulic Oil Chiller</option>
-          <option>Refrigerated Air Dryer</option>
-          <option>Dehumidifier</option>
-          <option>Rack AC / Fan Tray</option>
-          <option>Custom / Other Requirement</option>
+          <option value="Panel Air Conditioner">Panel Air Conditioner</option>
+          <option value="Water Chiller">Water Chiller</option>
+          <option value="Oil Chiller">Oil Chiller</option>
+          <option value="Refrigerated Air Dryer">Refrigerated Air Dryer</option>
+          <option value="Dehumidifier">Dehumidifier</option>
+          <option value="Rack AC / Fan Tray">Rack AC / Fan Tray</option>
+          <option value="Custom / Other Requirement">Custom / Other Requirement</option>
         </select>
       </div>
       <div className="form-group">
@@ -113,6 +134,8 @@ export default function ContactForm() {
           name="message"
           placeholder="Describe your cooling requirements — capacity, application, quantity, any custom specs..."
           rows={4}
+          value={messageVal}
+          onChange={(e) => setMessageVal(e.target.value)}
         />
       </div>
       <button type="submit" className="form-submit" disabled={loading}>

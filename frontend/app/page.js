@@ -17,139 +17,567 @@ const LogoHeading = () => (
 
 const staticProducts = [
   {
-    _id: "p1",
-    tag: "Chiller",
-    name: "CCSI Industrial Oil Cooling Chiller",
-    desc: "Mild Steel Industrial Oil Cooling Chiller. Easy to operate with high performance. Equipped with solenoid valve & delay timer, single phase preventer, hermetically sealed air cooled immersion compressor, digital control system, safety fuse, and built-in overload protection.",
-    image: "/images/products/industrial-oil-chiller-1.png",
-    models: "CCSI IOC 65k",
-    price: 65000,
+    "_id": "p1",
+    "tag": "Chiller",
+    "name": "CCSI Industrial Oil Cooling Chiller",
+    "desc": "Mild Steel Industrial Oil Cooling Chiller. Easy to operate with high performance. Equipped with solenoid valve & delay timer, single phase preventer, hermetically sealed air cooled immersion compressor, digital control system, safety fuse for main & compressor, and built-in overload protection. LP/HP switch turns off in case of low pressure.",
+    "image": "/images/products/industrial-oil-chiller-1.png",
+    "images": [
+      "/images/products/industrial-oil-chiller-1.png",
+      "/images/products/industrial-oil-chiller-2.png",
+      "/images/products/industrial-oil-chiller-3.png"
+    ],
+    "models": "CCSI CIOCC 65k",
+    "price": 65000,
+    "specifications": {
+      "coolingCapacity": 5250,
+      "power": 2500,
+      "refrigerant": "R22",
+      "dimensions": "755 x 505 x 930 mm",
+      "weight": 90,
+      "maxAmbientTemp": 45,
+      "workingTempRange": "10°C to 50°C"
+    },
+    "features": [
+      "Easy to operate",
+      "Solenoid valve & delay timer",
+      "High performance",
+      "Single phase preventer for cooling system",
+      "LP/HP switch turns off in case of low pressure",
+      "Hermetically sealed air cooled immersion compressor",
+      "Digital control system",
+      "Safety fuse for main & compressor",
+      "Built-in overload protection for compressor",
+      "Potential free alarm for high and low temperature",
+      "High / Low pressure switch",
+      "Fan failure alarm module",
+      "Water-cooled condenser for high ambient environment",
+      "Custom built size for replacement of imported units and special applications",
+      "Flow switch",
+      "Ante freezing switch"
+    ],
+    "applications": [
+      "Machining Centre",
+      "CNC Lathe",
+      "EDM",
+      "NC SPM",
+      "Hydraulic Press"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p2",
-    tag: "Chiller",
-    name: "CCSI Refrigerated Oil Chiller",
-    desc: "Mild Steel Refrigerated Oil Chiller. Industrial grade air cooled oil chiller designed for hydraulic and cooling loops. Sturdy, reliable, and energy efficient construction.",
-    image: "/images/products/refrigerated-oil-chiller-1.png",
-    models: "CCSI ROC 40k",
-    price: 40000,
+    "_id": "p2",
+    "tag": "Chiller",
+    "name": "CCSI Refrigerated Oil Chiller",
+    "desc": "Mild Steel Refrigerated Oil Chiller. Industrial grade oil chiller designed for hydraulic and cooling loops. Air cooled, sturdy, reliable, and energy efficient construction.",
+    "image": "/images/products/refrigerated-oil-chiller-1.png",
+    "images": [
+      "/images/products/refrigerated-oil-chiller-1.png",
+      "/images/products/refrigerated-oil-chiller-2.png"
+    ],
+    "models": "CCSI CROC 40k",
+    "price": 40000,
+    "specifications": {
+      "coolingCapacity": 2700,
+      "power": 1600,
+      "refrigerant": "R22",
+      "dimensions": "700 x 500 x 825 mm",
+      "weight": 80,
+      "maxAmbientTemp": 45,
+      "workingTempRange": "10°C to 50°C"
+    },
+    "features": [
+      "Air cooled chiller",
+      "Sturdy construction",
+      "Reliable performance",
+      "Energy efficient"
+    ],
+    "applications": [
+      "Hydraulic Power Packs",
+      "Industrial Machinery Cooling",
+      "Gearbox Cooling"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p3",
-    tag: "Chiller",
-    name: "CCSI Spindle Oil Chiller",
-    desc: "Copper Spindle Oil Chiller. Precision spindle oil cooling chiller with optimum tolerance capacity, heat resistance, long functional life, single phase preventer, solenoid valve, and digital control system.",
-    image: "/images/products/spindle-oil-chiller-1.png",
-    models: "CCSI SOC 65k",
-    price: 65000,
+    "_id": "p3",
+    "tag": "Chiller",
+    "name": "CCSI Spindle Oil Chiller",
+    "desc": "Copper Spindle Oil Chiller. Precision spindle oil cooling chiller with optimum tolerance capacity, heat resistance, and long functional life. Equipped with single phase preventer, solenoid valve & delay timer, hermetically sealed air cooled immersion compressor, digital control system, safety fuse, and built-in overload protection.",
+    "image": "/images/products/spindle-oil-chiller-1.png",
+    "images": [
+      "/images/products/spindle-oil-chiller-1.png",
+      "/images/products/spindle-oil-chiller-2.png"
+    ],
+    "models": "CCSI CSOC 65k",
+    "price": 65000,
+    "specifications": {
+      "coolingCapacity": 3500,
+      "power": 1800,
+      "refrigerant": "R22",
+      "dimensions": "720 x 500 x 850 mm",
+      "weight": 85,
+      "maxAmbientTemp": 45,
+      "workingTempRange": "10°C to 50°C"
+    },
+    "features": [
+      "Optimum tolerance capacity",
+      "Heat resistance",
+      "Long functional life",
+      "Single phase preventer for cooling system",
+      "LP/HP switch turns off in case of low pressure",
+      "Solenoid valve & delay timer",
+      "Hermetically sealed air cooled immersion compressor",
+      "Digital control system",
+      "Safety fuse for main & compressor",
+      "Built-in overload protection for compressor"
+    ],
+    "applications": [
+      "Machining Center",
+      "CNC Lathe",
+      "EDM",
+      "NC SPM",
+      "Hydraulic Press"
+    ],
+    "material": "Copper"
   },
   {
-    _id: "p4",
-    tag: "Chiller",
-    name: "CCSI Hydraulic Oil Chiller",
-    desc: "Mild Steel Hydraulic Oil Chiller. Easy to operate with hermetically sealed air cooled immersion compressor, digital controller, built-in overload protection, LP/HP switch, safety fuses, and optional water-cooled condenser.",
-    image: "/images/products/hydraulic-oil-chiller-1.png",
-    models: "CCSI HOC 55k",
-    price: 55000,
+    "_id": "p4",
+    "tag": "Chiller",
+    "name": "CCSI Hydraulic Oil Chiller",
+    "desc": "Mild Steel Hydraulic Oil Chiller. Easy to operate hydraulic oil chiller with hermetically sealed air cooled immersion compressor, digital controller, built-in overload protection, LP/HP switch, and safety fuses. Includes optional water-cooled condenser for high ambient environments.",
+    "image": "/images/products/hydraulic-oil-chiller-1.png",
+    "images": [
+      "/images/products/hydraulic-oil-chiller-1.png",
+      "/images/products/hydraulic-oil-chiller-2.png"
+    ],
+    "models": "CCSI CHOC 55k",
+    "price": 55000,
+    "specifications": {
+      "coolingCapacity": 5250,
+      "power": 2500,
+      "refrigerant": "R22",
+      "dimensions": "755 x 505 x 930 mm",
+      "weight": 90,
+      "maxAmbientTemp": 45,
+      "workingTempRange": "10°C to 50°C"
+    },
+    "features": [
+      "Easy to operate",
+      "Solenoid valve & delay timer",
+      "High performance",
+      "Single phase preventer for cooling system",
+      "LP/HP switch turns off in case of low pressure",
+      "Hermetically sealed air cooled immersion compressor",
+      "Digital control system",
+      "Safety fuse for main & compressor",
+      "Built-in overload protection for compressor",
+      "Potential free alarm for high and low temperature",
+      "High / Low pressure switch",
+      "Fan failure alarm module",
+      "Water-cooled condenser for high ambient environment",
+      "Custom built size for replacement of imported units and special applications",
+      "Flow switch",
+      "Ante freezing switch"
+    ],
+    "applications": [
+      "Machining Centre",
+      "CNC Lathe",
+      "EDM",
+      "NC SPM",
+      "Hydraulic Press"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p5",
-    tag: "Panel AC",
-    name: "CCSI Industrial Air Conditioner",
-    desc: "4 Star rated Industrial Air Conditioner. Heavy-duty, lightweight design, easy installation, and accurate thermal regulation for industrial control rooms and operator cabins.",
-    image: "/images/products/industrial-ac-1.png",
-    models: "CCSI IAC 70k (4-Star)",
-    price: 70000,
+    "_id": "p5",
+    "tag": "Panel AC",
+    "name": "CCSI Industrial Air Conditioner",
+    "desc": "4 Star rated Industrial Air Conditioner. Heavy-duty industrial air conditioner built for high durability, lightweight design, easy installation, and accurate thermal regulation for industrial control rooms and operator cabins.",
+    "image": "/images/products/industrial-ac-1.png",
+    "images": [
+      "/images/products/industrial-ac-1.png",
+      "/images/products/industrial-ac-2.png",
+      "/images/products/industrial-ac-3.png"
+    ],
+    "models": "CCSI IAC 70k",
+    "price": 70000,
+    "specifications": {
+      "coolingCapacity": 5000,
+      "power": 2200,
+      "refrigerant": "R22",
+      "dimensions": "1400 x 400 x 330 mm",
+      "weight": 42,
+      "maxAmbientTemp": 55,
+      "workingTempRange": "+10°C to +55°C",
+      "starRating": "4 Star"
+    },
+    "features": [
+      "4 Star energy rating",
+      "High durability",
+      "Lightweight design",
+      "Easy installation",
+      "Accurate thermal regulation"
+    ],
+    "applications": [
+      "Industrial Control Rooms",
+      "Automation Enclosures",
+      "Operator Cabins"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p6",
-    tag: "Panel AC",
-    name: "CCSI Panel Air Conditioner",
-    desc: "4 Star rated Panel Air Conditioner providing optimum cooling for electrical control cabinets. Features smooth finish, minimum maintenance, weekly filter alarm, and digital temperature controller.",
-    image: "/images/products/panel-ac-1.png",
-    models: "CCSI PAC 24k (4-Star)",
-    price: 24000,
+    "_id": "p6",
+    "tag": "Panel AC",
+    "name": "CCSI Panel Air Conditioner",
+    "desc": "4 Star rated electrical Panel Air Conditioner providing optimum cooling for electrical control cabinets and automation enclosures. Features smooth finish, minimum maintenance design, weekly filter alarm, and digital temperature controller.",
+    "image": "/images/products/panel-ac-1.png",
+    "images": [
+      "/images/products/panel-ac-1.png",
+      "/images/products/panel-ac-2.png",
+      "/images/products/panel-ac-3.png",
+      "/images/products/panel-ac-4.png",
+      "/images/products/panel-ac-5.png"
+    ],
+    "models": "CCSI IAC 24k",
+    "price": 24000,
+    "specifications": {
+      "coolingCapacity": 1600,
+      "power": 800,
+      "refrigerant": "R134a",
+      "dimensions": "830 x 400 x 300 mm",
+      "weight": 36,
+      "maxAmbientTemp": 55,
+      "workingTempRange": "+10°C to +55°C",
+      "starRating": "4 Star"
+    },
+    "features": [
+      "4 Star energy rating",
+      "Smooth finish",
+      "Minimum maintenance design",
+      "Weekly filter alarm",
+      "Digital temperature controller",
+      "Optimum cooling performance"
+    ],
+    "applications": [
+      "Electrical Control Cabinets",
+      "Automation Enclosures",
+      "Server Cabinets"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p7",
-    tag: "Panel AC",
-    name: "CCSI Ductable Panel Air Conditioner",
-    desc: "High strength, precisely engineered Ductable Panel Air Conditioner for panels requiring external air routing. Suitable for CNC machine tools and dusty environments.",
-    image: "/images/products/ductable-ac-1.png",
-    models: "CCSI DPAC 40k",
-    price: 40000,
+    "_id": "p7",
+    "tag": "Panel AC",
+    "name": "CCSI Ductable Panel Air Conditioner",
+    "desc": "High strength, precisely engineered Ductable Panel Air Conditioner offering optimum cooling solutions for panels requiring external air routing. Ideal for CNC machine tools and enclosures in dusty or contaminated environments.",
+    "image": "/images/products/ductable-ac-1.png",
+    "images": [
+      "/images/products/ductable-ac-1.png",
+      "/images/products/ductable-ac-2.png",
+      "/images/products/ductable-ac-3.png",
+      "/images/products/ductable-ac-4.png",
+      "/images/products/ductable-ac-5.png",
+      "/images/products/ductable-ac-6.png",
+      "/images/products/ductable-ac-7.png",
+      "/images/products/ductable-ac-8.png"
+    ],
+    "models": "CCSI IAC 40k",
+    "price": 40000,
+    "specifications": {
+      "coolingCapacity": 2000,
+      "power": 1100,
+      "refrigerant": "R134a",
+      "dimensions": "950 x 440 x 340 mm",
+      "weight": 42,
+      "maxAmbientTemp": 55,
+      "workingTempRange": "+10°C to +55°C"
+    },
+    "features": [
+      "High strength construction",
+      "Precisely engineered",
+      "Optimum cooling with external air routing",
+      "Suitable for dusty/contaminated environments"
+    ],
+    "applications": [
+      "CNC Machine Tools",
+      "Enclosures in Dusty Environments",
+      "Process Control Rooms"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p8",
-    tag: "Chiller",
-    name: "CCSI Online Water Chiller",
-    desc: "Mild Steel 5 TR Online Water Chiller. Precision water chiller designed specifically for laser machine cooling with highly stable temperature control.",
-    image: "/images/products/online-water-chiller-1.png",
-    models: "CCSI OWC 5TR",
-    price: 120000,
+    "_id": "p8",
+    "tag": "Chiller",
+    "name": "CCSI Online Water Chiller",
+    "desc": "Mild Steel 5 TR Online Water Chiller. Precision online water chiller designed specifically for laser machine cooling, featuring highly stable temperature control. Trusted for use in laser cutting machines, medical lasers, and industrial packaging lines.",
+    "image": "/images/products/online-water-chiller-1.png",
+    "images": [
+      "/images/products/online-water-chiller-1.png",
+      "/images/products/online-water-chiller-2.png"
+    ],
+    "models": "CCSI COWC 120k",
+    "price": 120000,
+    "specifications": {
+      "coolingCapacity": 5250,
+      "power": 2000,
+      "refrigerant": "R22",
+      "dimensions": "755 x 505 x 930 mm",
+      "weight": 90,
+      "maxAmbientTemp": 45,
+      "workingTempRange": "10°C to 50°C",
+      "capacity": "5 TR"
+    },
+    "features": [
+      "Highly stable temperature control",
+      "5 TR cooling capacity",
+      "Precise temperature regulation",
+      "Suitable for laser cooling applications"
+    ],
+    "applications": [
+      "Laser Cutting Machines",
+      "Medical Lasers",
+      "Industrial Packaging Lines"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p9",
-    tag: "Chiller",
-    name: "CCSI Water Cooling Chiller Machine",
-    desc: "Industrial heavy-duty Water Cooling Chiller Machine with robust construction and optimum performance under continuous operation for large-scale industrial applications.",
-    image: "/images/products/water-cooling-machine-1.png",
-    models: "CCSI WCCM 20L",
-    price: 2000000,
+    "_id": "p9",
+    "tag": "Chiller",
+    "name": "CCSI Water Cooling Chiller Machine",
+    "desc": "Industrial heavy-duty Water Cooling Chiller Machine boasting robust construction, sturdiness, and optimum performance under continuous operation. Designed for large-scale industrial applications including plastic moulding plants and extrusion lines.",
+    "image": "/images/products/water-cooling-machine-1.png",
+    "images": [
+      "/images/products/water-cooling-machine-1.png"
+    ],
+    "models": "CCSI CWCCM 2000k",
+    "price": 2000000,
+    "specifications": {
+      "coolingCapacity": 14000,
+      "power": 5200,
+      "refrigerant": "R22",
+      "dimensions": "950 x 650 x 1100 mm",
+      "weight": 180,
+      "maxAmbientTemp": 50,
+      "workingTempRange": "5°C to 45°C"
+    },
+    "features": [
+      "Robust construction",
+      "Heavy-duty performance",
+      "Suitable for continuous operation",
+      "Centralized industrial cooling"
+    ],
+    "applications": [
+      "Plastic Moulding Plants",
+      "Extrusion Lines",
+      "Centralized Industrial Cooling"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p10",
-    tag: "Panel AC",
-    name: "CCSI Air To Air Heat Exchanger",
-    desc: "Mild Steel Air To Air Heat Exchanger, Air-Cooled, 240V. Features precise construction, optimum functionality, and elevated service life for electrical enclosures.",
-    image: "/images/products/air-heat-exchanger-1.png",
-    models: "CCSI AAHE 11k",
-    price: 11000,
+    "_id": "p10",
+    "tag": "Panel AC",
+    "name": "CCSI Air To Air Heat Exchanger",
+    "desc": "Mild Steel Air To Air Heat Exchanger, Air-Cooled, 240V operating voltage. Features precise construction, optimum functionality, and elevated service life. Ideal for cooling electrical enclosures and control cabinets without introducing outside air.",
+    "image": "/images/products/air-heat-exchanger-1.png",
+    "images": [
+      "/images/products/air-heat-exchanger-1.png"
+    ],
+    "models": "CCSI CATAHE 11k",
+    "price": 11000,
+    "specifications": {
+      "coolingCapacity": 1000,
+      "power": 240,
+      "refrigerant": "Air",
+      "dimensions": "600 x 300 x 150 mm",
+      "weight": 12,
+      "maxAmbientTemp": 60,
+      "workingTempRange": "+10°C to +60°C",
+      "voltage": "240V",
+      "coolingType": "Air-Cooled"
+    },
+    "features": [
+      "Precise construction",
+      "Optimum functionality",
+      "Elevated service life",
+      "Air-cooled design",
+      "240V operating voltage"
+    ],
+    "applications": [
+      "Electrical Enclosures",
+      "Control Cabinets",
+      "Telecom Booths"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p11",
-    tag: "Chiller",
-    name: "CCSI Water Cooled Scroll Chiller",
-    desc: "Mild Steel 10 Ton Water Cooled Scroll Chiller. Low power consumption, less heat emission, and smooth functioning for centralized industrial cooling.",
-    image: "/images/products/scroll-chiller-1.png",
-    models: "CCSI WCSC 10T",
-    price: 85000,
+    "_id": "p11",
+    "tag": "Chiller",
+    "name": "CCSI Water Cooled Scroll Chiller",
+    "desc": "Mild Steel 10 Ton Water Cooled Scroll Chiller. Engineered for low power consumption, less heat emission, and smooth functioning in centralized cooling setups. Ideal for heavy machinery cooling and industrial process applications.",
+    "image": "/images/products/scroll-chiller-1.png",
+    "images": [
+      "/images/products/scroll-chiller-1.png"
+    ],
+    "models": "CCSI CWCSC 85k",
+    "price": 85000,
+    "specifications": {
+      "coolingCapacity": 10500,
+      "power": 5000,
+      "refrigerant": "R22",
+      "dimensions": "1720 x 758 x 693 mm",
+      "weight": 300,
+      "maxAmbientTemp": 45,
+      "workingTempRange": "10°C to 50°C",
+      "capacity": "10 Ton"
+    },
+    "features": [
+      "Low power consumption",
+      "Less heat emission",
+      "Smooth functioning",
+      "10 Ton cooling capacity",
+      "Water cooled scroll compressor"
+    ],
+    "applications": [
+      "Heavy Machinery Cooling",
+      "Plastics & Moulding",
+      "Chemical Processing"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p12",
-    tag: "Chiller",
-    name: "CCSI Water Soluble Coolant Chiller",
-    desc: "Mild Steel 6 TR Water Soluble Coolant Chiller. Easy to install, highly flexible, with increased effectiveness for CNC machining center coolant sumps.",
-    image: "/images/products/coolant-chiller-1.png",
-    models: "CCSI WSCC 6TR",
-    price: 80000,
+    "_id": "p12",
+    "tag": "Chiller",
+    "name": "CCSI Water Soluble Coolant Chiller",
+    "desc": "Mild Steel 6 TR Water Soluble Coolant Chiller. Highly flexible, easy to install water soluble coolant chiller with increased effectiveness for machine tool coolant sumps. Designed for CNC machining centers and grinding operations.",
+    "image": "/images/products/coolant-chiller-1.png",
+    "images": [
+      "/images/products/coolant-chiller-1.png"
+    ],
+    "models": "CCSI CWSCC 80k",
+    "price": 80000,
+    "specifications": {
+      "coolingCapacity": 3500,
+      "power": 1500,
+      "refrigerant": "R22",
+      "dimensions": "650 x 450 x 800 mm",
+      "weight": 75,
+      "maxAmbientTemp": 45,
+      "workingTempRange": "10°C to 50°C",
+      "capacity": "6 TR"
+    },
+    "features": [
+      "Easy installation",
+      "Highly flexible",
+      "Increased effectiveness",
+      "6 TR cooling capacity",
+      "Designed for water soluble coolants"
+    ],
+    "applications": [
+      "CNC Machining Centers",
+      "Grinding Sump Systems",
+      "Metal Cutting Machines"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p13",
-    tag: "Dehumidifier",
-    name: "CCSI Industrial Dehumidifier",
-    desc: "High capacity refrigerated moisture removal unit designed to protect raw materials, pharma products, and dry warehouses from moisture damage.",
-    image: "/images/products/dehumidifier.png",
-    models: "CCSI Dehumidifier 100 LPD – 500 LPD",
-    price: 28000,
+    "_id": "p13",
+    "tag": "Dehumidifier",
+    "name": "CCSI Industrial Dehumidifier",
+    "desc": "High capacity refrigerated moisture removal unit designed to protect raw materials, pharma products, and dry warehouses from moisture damage.",
+    "image": "/images/products/dehumidifier.png",
+    "images": [
+      "/images/products/dehumidifier.png"
+    ],
+    "models": "CCSI CID 28k",
+    "price": 28000,
+    "specifications": {
+      "coolingCapacity": 1800,
+      "power": 750,
+      "refrigerant": "R134a",
+      "dimensions": "700 x 450 x 400 mm",
+      "weight": 38,
+      "maxAmbientTemp": 40,
+      "workingTempRange": "5°C to 38°C"
+    },
+    "features": [
+      "High capacity moisture removal",
+      "Refrigerated dehumidification",
+      "Protects against moisture damage"
+    ],
+    "applications": [
+      "Pharma Warehouses",
+      "Dry Storage Facilities",
+      "Printing Press Areas",
+      "Food & Chemical Preservation"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p14",
-    tag: "Air Dryer",
-    name: "CCSI Refrigerated Air Dryer",
-    desc: "Compressed air moisture separation system protecting pneumatic tools, instrumentation, and processes by drying input air.",
-    image: "/images/products/air-dryer.png",
-    models: "CCSI Air Dryer 15 CFM – 500 CFM",
-    price: 35000,
+    "_id": "p14",
+    "tag": "Air Dryer",
+    "name": "CCSI Refrigerated Air Dryer",
+    "desc": "Compressed air moisture separation system protecting pneumatic tools, instrumentation, and processes by drying input air.",
+    "image": "/images/products/air-dryer.png",
+    "images": [
+      "/images/products/air-dryer.png"
+    ],
+    "models": "CCSI CRAD 35k",
+    "price": 35000,
+    "specifications": {
+      "coolingCapacity": 1200,
+      "power": 600,
+      "refrigerant": "R134a",
+      "dimensions": "600 x 450 x 500 mm",
+      "weight": 45,
+      "maxAmbientTemp": 45,
+      "workingTempRange": "2°C to 10°C"
+    },
+    "features": [
+      "Compressed air drying",
+      "Moisture separation",
+      "Protects pneumatic tools and instrumentation"
+    ],
+    "applications": [
+      "Pneumatic Tool Lines",
+      "Packaging Machinery",
+      "Paint Spray Systems",
+      "Textile Manufacturing"
+    ],
+    "material": "Mild Steel"
   },
   {
-    _id: "p15",
-    tag: "Fan Tray",
-    name: "CCSI Fan Tray",
-    desc: "Standard cabinet mounting fan array providing active top air circulation and quick heat dissipation inside server and network rack configurations.",
-    image: "/images/products/rack-ac.png",
-    models: "CCSI Fan Tray 2-Way – 6-Way",
-    price: 15000,
+    "_id": "p15",
+    "tag": "Fan Tray",
+    "name": "CCSI Fan Tray",
+    "desc": "Standard cabinet mounting fan array providing active top air circulation and quick heat dissipation inside server and network rack configurations.",
+    "image": "/images/products/rack-ac.png",
+    "images": [
+      "/images/products/rack-ac.png"
+    ],
+    "models": "CCSI CFT 15k",
+    "price": 15000,
+    "specifications": {
+      "coolingCapacity": 0,
+      "power": 80,
+      "refrigerant": "Air",
+      "dimensions": "482 x 350 x 44 mm",
+      "weight": 4,
+      "maxAmbientTemp": 60,
+      "workingTempRange": "-10°C to 60°C"
+    },
+    "features": [
+      "Active air circulation",
+      "Quick heat dissipation",
+      "Standard rack mount"
+    ],
+    "applications": [
+      "Network Racks",
+      "Server Enclosures",
+      "IT Industries",
+      "Telecom Sector"
+    ],
+    "material": "Mild Steel"
   }
 ];
 
@@ -251,6 +679,10 @@ export default function Home() {
   const { addToCart } = useCart();
   const [dbProducts, setDbProducts] = useState([]);
   const [addedItems, setAddedItems] = useState({});
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [inquiryProduct, setInquiryProduct] = useState("");
+  const [inquiryMessage, setInquiryMessage] = useState("");
 
   useEffect(() => {
     async function fetchProducts() {
@@ -375,7 +807,7 @@ export default function Home() {
           </div>
           <div className="products-grid">
             {displayedProducts.map((p, i) => {
-              const imgUrl = p.image || getProductImage(p);
+              const imgUrl = (p.images && p.images[0]) || p.image || getProductImage(p);
               const titleText = p.name || p.title;
               const descText = p.description || p.desc;
               const tagText = p.category || p.tag;
@@ -384,48 +816,59 @@ export default function Home() {
 
               return (
                 <div className="product-card" key={key}>
-                  <div className="product-card-image">
-                    <Image
-                      src={imgUrl}
-                      alt={`${titleText} manufactured by Climate Control System India`}
-                      width={300}
-                      height={200}
-                    />
+                  <div 
+                    onClick={() => { setSelectedProduct(p); setActiveImageIndex(0); }} 
+                    style={{ cursor: "pointer" }}
+                  >
+                    <div className="product-card-image">
+                      <Image
+                        src={imgUrl}
+                        alt={`${titleText} manufactured by Climate Control System India`}
+                        width={300}
+                        height={200}
+                      />
+                    </div>
+                    <div className="product-card-body" style={{ paddingBottom: 0 }}>
+                      <div className="product-card-tag">{tagText}</div>
+                      <h3 className="product-card-title">{titleText}</h3>
+                      <p className="product-card-desc" style={{ display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden", minHeight: "72px" }}>{descText}</p>
+                      {p.models && (
+                        <p
+                          style={{
+                            fontSize: "12px",
+                            color: "var(--text-light)",
+                            marginBottom: "14px",
+                            fontWeight: 500,
+                          }}
+                        >
+                          {p.models}
+                        </p>
+                      )}
+                      {p.price && (
+                        <p
+                          style={{
+                            fontSize: "15px",
+                            color: "var(--primary)",
+                            marginBottom: "14px",
+                            fontWeight: 700,
+                          }}
+                        >
+                          Indicative Price: ₹{Number(p.price).toLocaleString('en-IN')}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                  <div className="product-card-body">
-                    <div className="product-card-tag">{tagText}</div>
-                    <h3 className="product-card-title">{titleText}</h3>
-                    <p className="product-card-desc">{descText}</p>
-                    {p.models && (
-                      <p
-                        style={{
-                          fontSize: "12px",
-                          color: "var(--text-light)",
-                          marginBottom: "14px",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {p.models}
-                      </p>
-                    )}
-                    {p.price && (
-                      <p
-                        style={{
-                          fontSize: "15px",
-                          color: "var(--primary)",
-                          marginBottom: "14px",
-                          fontWeight: 700,
-                        }}
-                      >
-                        Indicative Price: ₹{Number(p.price).toLocaleString('en-IN')}
-                      </p>
-                    )}
+                  <div className="product-card-body" style={{ paddingTop: 0 }}>
                     <div style={{ display: "flex", gap: "10px", marginTop: "12px" }}>
-                      <a href="#contact" className="product-card-link" style={{ flex: 1, textAlign: "center", textDecoration: "none", display: "inline-block" }}>
-                        Get Quote →
-                      </a>
+                      <button 
+                        onClick={() => { setSelectedProduct(p); setActiveImageIndex(0); }}
+                        className="product-card-link" 
+                        style={{ flex: 1, textAlign: "center", textDecoration: "none", display: "inline-block", background: "transparent", border: "1px solid var(--primary)", color: "var(--primary)", borderRadius: "var(--radius-sm)", padding: "8px 12px", fontSize: "12px", fontWeight: "bold" }}
+                      >
+                        View Details →
+                      </button>
                       <button
-                        onClick={() => handleAddToRFQ(p)}
+                        onClick={(e) => { e.stopPropagation(); handleAddToRFQ(p); }}
                         className="btn-primary"
                         style={{
                           padding: "8px 16px",
@@ -611,7 +1054,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <ContactForm />
+            <ContactForm initialProduct={inquiryProduct} initialMessage={inquiryMessage} />
           </div>
         </div>
       </section>
@@ -687,6 +1130,203 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* ===== PRODUCT DETAIL MODAL ===== */}
+      {selectedProduct && (
+        <div className="modal-backdrop" onClick={() => setSelectedProduct(null)}>
+          <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedProduct(null)}>×</button>
+            
+            <div className="modal-header-section">
+              <span className="modal-category">{selectedProduct.category || selectedProduct.tag}</span>
+              <h2 className="modal-title">{selectedProduct.name || selectedProduct.title}</h2>
+            </div>
+            
+            <div className="modal-body">
+              {/* Left Column: Gallery */}
+              <div className="modal-gallery">
+                <div className="main-image-wrapper">
+                  <img
+                    src={
+                      selectedProduct.images && selectedProduct.images.length > 0
+                        ? selectedProduct.images[activeImageIndex]
+                        : selectedProduct.image || getProductImage(selectedProduct)
+                    }
+                    alt={selectedProduct.name}
+                  />
+                </div>
+                {selectedProduct.images && selectedProduct.images.length > 1 && (
+                  <div className="thumbnails-grid">
+                    {selectedProduct.images.map((img, idx) => (
+                      <button
+                        key={idx}
+                        className={`thumbnail-button ${activeImageIndex === idx ? "active" : ""}`}
+                        onClick={() => setActiveImageIndex(idx)}
+                      >
+                        <img src={img} alt={`${selectedProduct.name} thumbnail ${idx + 1}`} />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Right Column: Details */}
+              <div className="modal-info-section">
+                <p className="modal-description">
+                  {selectedProduct.description || selectedProduct.desc}
+                </p>
+
+                {/* Specifications */}
+                {selectedProduct.specifications && Object.keys(selectedProduct.specifications).length > 0 && (
+                  <div>
+                    <h3 className="specs-title">
+                      <svg style={{ width: "18px", height: "18px" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                      </svg>
+                      Technical Specifications
+                    </h3>
+                    <table className="specs-table">
+                      <tbody>
+                        {selectedProduct.material && (
+                          <tr>
+                            <td className="specs-label">Material</td>
+                            <td className="specs-value">{selectedProduct.material}</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.coolingCapacity > 0 && (
+                          <tr>
+                            <td className="specs-label">Cooling Capacity</td>
+                            <td className="specs-value">{selectedProduct.specifications.coolingCapacity} W</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.power > 0 && (
+                          <tr>
+                            <td className="specs-label">Power Consumption</td>
+                            <td className="specs-value">{selectedProduct.specifications.power} W</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.refrigerant && (
+                          <tr>
+                            <td className="specs-label">Refrigerant</td>
+                            <td className="specs-value">{selectedProduct.specifications.refrigerant}</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.dimensions && (
+                          <tr>
+                            <td className="specs-label">Dimensions</td>
+                            <td className="specs-value">{selectedProduct.specifications.dimensions}</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.weight > 0 && (
+                          <tr>
+                            <td className="specs-label">Weight</td>
+                            <td className="specs-value">{selectedProduct.specifications.weight} kg</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.maxAmbientTemp > 0 && (
+                          <tr>
+                            <td className="specs-label">Max Ambient Temp</td>
+                            <td className="specs-value">{selectedProduct.specifications.maxAmbientTemp}°C</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.workingTempRange && (
+                          <tr>
+                            <td className="specs-label">Working Temp Range</td>
+                            <td className="specs-value">{selectedProduct.specifications.workingTempRange}</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.starRating && (
+                          <tr>
+                            <td className="specs-label">Star Rating</td>
+                            <td className="specs-value">{selectedProduct.specifications.starRating}</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.capacity && (
+                          <tr>
+                            <td className="specs-label">Capacity</td>
+                            <td className="specs-value">{selectedProduct.specifications.capacity}</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.voltage && (
+                          <tr>
+                            <td className="specs-label">Voltage</td>
+                            <td className="specs-value">{selectedProduct.specifications.voltage}</td>
+                          </tr>
+                        )}
+                        {selectedProduct.specifications.coolingType && (
+                          <tr>
+                            <td className="specs-label">Cooling Type</td>
+                            <td className="specs-value">{selectedProduct.specifications.coolingType}</td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
+                {/* Key Features */}
+                {selectedProduct.features && selectedProduct.features.length > 0 && (
+                  <div>
+                    <h4 className="modal-list-title">Key Features</h4>
+                    <ul className="modal-bullet-list">
+                      {selectedProduct.features.map((feat, idx) => (
+                        <li key={idx}>{feat}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Applications */}
+                {selectedProduct.applications && selectedProduct.applications.length > 0 && (
+                  <div>
+                    <h4 className="modal-list-title">Typical Applications</h4>
+                    <ul className="modal-bullet-list">
+                      {selectedProduct.applications.map((app, idx) => (
+                        <li key={idx}>{app}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {selectedProduct.price && (
+                  <div style={{ fontSize: "16px", fontWeight: "700", color: "var(--primary)" }}>
+                    Indicative Price: ₹{Number(selectedProduct.price).toLocaleString('en-IN')}
+                  </div>
+                )}
+
+                <div className="modal-actions">
+                  <button
+                    onClick={() => {
+                      setInquiryProduct(selectedProduct.category || selectedProduct.tag);
+                      setInquiryMessage(`I would like to request a formal quotation for the product: "${selectedProduct.name || selectedProduct.title}".\n\nSpecifications:\n- Material: ${selectedProduct.material || "Mild Steel"}\n- Dimensions: ${selectedProduct.specifications?.dimensions || "Standard"}`);
+                      setSelectedProduct(null);
+                      const contactSection = document.getElementById("contact");
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="btn-primary"
+                    style={{ flex: 1, justifyContent: "center" }}
+                  >
+                    Request Quote for this Unit
+                  </button>
+                  <button
+                    onClick={() => handleAddToRFQ(selectedProduct)}
+                    className="btn-outline"
+                    style={{
+                      background: addedItems[selectedProduct._id || selectedProduct.name || selectedProduct.title] ? "var(--success)" : "white",
+                      color: addedItems[selectedProduct._id || selectedProduct.name || selectedProduct.title] ? "white" : "var(--text-dark)",
+                      borderColor: addedItems[selectedProduct._id || selectedProduct.name || selectedProduct.title] ? "var(--success)" : "var(--border)"
+                    }}
+                  >
+                    {addedItems[selectedProduct._id || selectedProduct.name || selectedProduct.title] ? "✓ Added to RFQ" : "+ Add to RFQ"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

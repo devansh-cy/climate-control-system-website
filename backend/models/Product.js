@@ -23,7 +23,11 @@ const productSchema = new mongoose.Schema({
     dimensions: { type: String },
     weight: { type: Number },
     maxAmbientTemp: { type: Number },
-    workingTempRange: { type: String }
+    workingTempRange: { type: String },
+    starRating: { type: String },
+    capacity: { type: String },
+    voltage: { type: String },
+    coolingType: { type: String }
   },
   images: {
     type: [String],
@@ -41,6 +45,13 @@ const productSchema = new mongoose.Schema({
   applications: {
     type: [String],
     default: []
+  },
+  features: {
+    type: [String],
+    default: []
+  },
+  material: {
+    type: String
   },
   relatedProducts: [{
     type: mongoose.Schema.Types.ObjectId,
