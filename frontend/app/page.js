@@ -21,7 +21,7 @@ const staticProducts = [
     tag: "Chiller",
     name: "CCSI Industrial Oil Cooling Chiller",
     desc: "High-performance air-cooled industrial oil cooling chiller equipped with solenoid valve, delay timer, single phase preventer, and LP/HP switch. Perfect for machining centers, CNC lathes, EDM, NC SPM, and hydraulic presses.",
-    image: "/images/products/oil-chiller.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/350534001/IE/MS/PK/191739580/industrial-oil-cooling-chiller-500x500.jpg",
     models: "CCSI IOC 65k",
     price: 65000,
   },
@@ -30,7 +30,7 @@ const staticProducts = [
     tag: "Chiller",
     name: "CCSI Refrigerated Oil Chiller",
     desc: "Industrial grade refrigerated oil chiller designed for hydraulic and cooling loops. Sturdy, reliable, and energy efficient construction.",
-    image: "/images/products/oil-chiller.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/350535486/SZ/ST/XO/191739580/refrigerated-oil-chiller-500x500.jpg",
     models: "CCSI ROC 40k",
     price: 40000,
   },
@@ -39,7 +39,7 @@ const staticProducts = [
     tag: "Chiller",
     name: "CCSI Spindle Oil Chiller",
     desc: "Precision spindle oil cooling chiller with optimum tolerance capacity, heat resistance, long functional life, single phase preventer, solenoid valve, and digital control system.",
-    image: "/images/products/oil-chiller.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/350537912/PH/TD/TA/191739580/spindle-oil-chiller-500x500.jpg",
     models: "CCSI SOC 65k",
     price: 65000,
   },
@@ -48,7 +48,7 @@ const staticProducts = [
     tag: "Chiller",
     name: "CCSI Hydraulic Oil Chiller",
     desc: "Easy-to-operate hydraulic oil chiller with hermetically sealed air cooled immersion compressor, digital controller, built-in overload protection, LP/HP switch, and safety fuses.",
-    image: "/images/products/oil-chiller.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/350537467/IM/LV/QR/191739580/hydraulic-oil-chiller-500x500.jpg",
     models: "CCSI HOC 55k",
     price: 55000,
   },
@@ -57,7 +57,7 @@ const staticProducts = [
     tag: "Panel AC",
     name: "CCSI Industrial Air Conditioner",
     desc: "Heavy-duty 4-star rated industrial air conditioner built for high durability, lightweight design, easy installation, and accurate thermal regulation.",
-    image: "/images/products/panel-ac.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/349692168/WC/HX/BF/191739580/industrial-air-conditioner-500x500.jpeg",
     models: "CCSI IAC 70k (4-Star)",
     price: 70000,
   },
@@ -66,7 +66,7 @@ const staticProducts = [
     tag: "Panel AC",
     name: "CCSI Panel Air Conditioner",
     desc: "4-star rated electrical panel air conditioner providing optimum cooling with smooth finish, minimum maintenance, weekly filter alarm, and digital temperature controller.",
-    image: "/images/products/panel-ac.png",
+    image: "https://5.imimg.com/data5/ANDROID/Default/2023/10/355927036/LN/KW/EN/191739580/product-jpeg-500x500.jpg",
     models: "CCSI PAC 24k (4-Star)",
     price: 24000,
   },
@@ -75,7 +75,7 @@ const staticProducts = [
     tag: "Panel AC",
     name: "CCSI Ductable Panel Air Conditioner",
     desc: "High strength, precisely engineered ductable panel cooler offering optimum cooling solutions for panels requiring external air routing.",
-    image: "/images/products/panel-ac.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2024/3/395250551/XX/DG/MW/191739580/ductable-panel-air-conditioner-500x500.jpg",
     models: "CCSI DPAC 40k",
     price: 40000,
   },
@@ -84,7 +84,7 @@ const staticProducts = [
     tag: "Chiller",
     name: "CCSI Online Water Chiller",
     desc: "Precision online water chiller designed specifically for laser machine cooling, featuring highly stable temperature control.",
-    image: "/images/products/water-chiller.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/350531467/QK/EJ/IX/191739580/online-water-chiller-500x500.jpg",
     models: "CCSI OWC 1.2L",
     price: 120000,
   },
@@ -93,7 +93,7 @@ const staticProducts = [
     tag: "Chiller",
     name: "CCSI Water Cooling Chiller Machine",
     desc: "Industrial heavy-duty water cooling chiller machine boasting robust construction, sturdiness, and optimum performance under continuous operation.",
-    image: "/images/products/water-chiller.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/350532110/QM/PU/ND/191739580/water-cooling-chiller-machine-500x500.jpg",
     models: "CCSI WCCM 20L",
     price: 2000000,
   },
@@ -102,7 +102,7 @@ const staticProducts = [
     tag: "Panel AC",
     name: "CCSI Air To Air Heat Exchanger",
     desc: "Mild steel air-to-air heat exchanger, air-cooled, 240V operating voltage. Features precise construction, optimum functionality, and elevated service life.",
-    image: "/images/products/panel-ac.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/349697988/HZ/GH/UD/191739580/autoblie-harness-500x500.png",
     models: "CCSI AAHE 11k",
     price: 11000,
   },
@@ -111,7 +111,7 @@ const staticProducts = [
     tag: "Chiller",
     name: "CCSI Water Cooled Scroll Chiller",
     desc: "Water-cooled scroll chiller engineered for low power consumption, less heat emission, and smooth functioning in centralized cooling setups.",
-    image: "/images/products/water-chiller.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/349691198/UM/NK/GZ/191739580/water-cooled-scroll-chiller-500x500.jpeg",
     models: "CCSI WCSC 85k",
     price: 85000,
   },
@@ -120,7 +120,7 @@ const staticProducts = [
     tag: "Chiller",
     name: "CCSI Water Soluble Coolant Chiller",
     desc: "Highly flexible, water soluble coolant chiller designed for easy installation and increased cooling effectiveness in machine tool coolant sumps.",
-    image: "/images/products/water-chiller.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/350533873/IM/GZ/KG/191739580/water-soluble-coolant-chiller-500x500.jpg",
     models: "CCSI WSCC 80k",
     price: 80000,
   },
@@ -502,51 +502,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== WHY CCSI ===== */}
-      <section className="section" id="why-us">
-        <div className="container">
-          <div className="section-header">
-            <div className="section-label">Why Choose Us</div>
-            <h2 className="section-title">
-              The CCSI Advantage
-            </h2>
-            <p className="section-desc">
-              Trusted by engineering industries across India for reliable,
-              quality-tested refrigeration and climate control equipment.
-            </p>
-          </div>
-          <div className="why-grid">
-            {whyCards.map((c, i) => (
-              <div className="why-card" key={i}>
-                <div className="why-card-icon">{c.icon}</div>
-                <h3 className="why-card-title">{c.title}</h3>
-                <p className="why-card-desc">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ===== INDUSTRIES ===== */}
-      <section className="section section-alt" id="industries">
-        <div className="container">
-          <div className="section-header">
-            <div className="section-label">Industries We Serve</div>
-            <h2 className="section-title">Trusted Across Sectors</h2>
-            <p className="section-desc">
-              Our equipment powers critical processes in diverse industries.
-            </p>
-          </div>
-          <div className="industries-grid">
-            {industries.map((ind, i) => (
-              <div className="industry-chip" key={i}>
-                <div className="industry-chip-icon">{ind.icon}</div>
-                {ind.name}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ===== CTA BANNER ===== */}
       <section className="cta-section">

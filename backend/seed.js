@@ -16,7 +16,7 @@ const sampleProducts = [
       maxAmbientTemp: 45,
       workingTempRange: "10°C to 50°C"
     },
-    images: ["/images/products/oil-chiller.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/350534001/IE/MS/PK/191739580/industrial-oil-cooling-chiller-500x500.jpg"],
     price: 65000,
     inStock: true,
     applications: ["Machining Centre", "CNC Lathe", "EDM", "NC SPM", "Hydraulic Press"],
@@ -35,7 +35,7 @@ const sampleProducts = [
       maxAmbientTemp: 45,
       workingTempRange: "10°C to 50°C"
     },
-    images: ["/images/products/oil-chiller.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/350535486/SZ/ST/XO/191739580/refrigerated-oil-chiller-500x500.jpg"],
     price: 40000,
     inStock: true,
     applications: ["Hydraulic Power Packs", "Industrial Machinery Cooling", "Gearbox Cooling"],
@@ -54,7 +54,7 @@ const sampleProducts = [
       maxAmbientTemp: 45,
       workingTempRange: "10°C to 50°C"
     },
-    images: ["/images/products/oil-chiller.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/350537912/PH/TD/TA/191739580/spindle-oil-chiller-500x500.jpg"],
     price: 65000,
     inStock: true,
     applications: ["Machining Center Spindles", "CNC Lathe Spindles", "EDM Spindle Cooling", "NC SPM Spindles", "Hydraulic Presses"],
@@ -73,7 +73,7 @@ const sampleProducts = [
       maxAmbientTemp: 45,
       workingTempRange: "10°C to 50°C"
     },
-    images: ["/images/products/oil-chiller.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/350537467/IM/LV/QR/191739580/hydraulic-oil-chiller-500x500.jpg"],
     price: 55000,
     inStock: true,
     applications: ["Hydraulic Presses", "Machining Centres", "CNC Lathes", "EDM", "NC SPM"],
@@ -92,7 +92,7 @@ const sampleProducts = [
       maxAmbientTemp: 55,
       workingTempRange: "+10°C to +55°C"
     },
-    images: ["/images/products/panel-ac.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/349692168/WC/HX/BF/191739580/industrial-air-conditioner-500x500.jpeg"],
     price: 70000,
     inStock: true,
     applications: ["Industrial Control Rooms", "Automation Enclosures", "Operator Cabins"],
@@ -111,7 +111,7 @@ const sampleProducts = [
       maxAmbientTemp: 55,
       workingTempRange: "+10°C to +55°C"
     },
-    images: ["/images/products/panel-ac.png"],
+    images: ["https://5.imimg.com/data5/ANDROID/Default/2023/10/355927036/LN/KW/EN/191739580/product-jpeg-500x500.jpg"],
     price: 24000,
     inStock: true,
     applications: ["Electrical Control Cabinets", "Automation Enclosures", "Server Cabinets"],
@@ -130,7 +130,7 @@ const sampleProducts = [
       maxAmbientTemp: 55,
       workingTempRange: "+10°C to +55°C"
     },
-    images: ["/images/products/panel-ac.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2024/3/395250551/XX/DG/MW/191739580/ductable-panel-air-conditioner-500x500.jpg"],
     price: 40000,
     inStock: true,
     applications: ["CNC Machine Tools", "Enclosures in Dusty Environments", "Process Control Rooms"],
@@ -149,7 +149,7 @@ const sampleProducts = [
       maxAmbientTemp: 45,
       workingTempRange: "10°C to 50°C"
     },
-    images: ["/images/products/water-chiller.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/350531467/QK/EJ/IX/191739580/online-water-chiller-500x500.jpg"],
     price: 120000,
     inStock: true,
     applications: ["Laser Cutting Machines", "Medical Lasers", "Industrial Packaging Lines"],
@@ -168,7 +168,7 @@ const sampleProducts = [
       maxAmbientTemp: 50,
       workingTempRange: "5°C to 45°C"
     },
-    images: ["/images/products/water-chiller.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/350532110/QM/PU/ND/191739580/water-cooling-chiller-machine-500x500.jpg"],
     price: 2000000,
     inStock: true,
     applications: ["Plastic Moulding Plants", "Extrusion Lines", "Centralized Industrial Cooling"],
@@ -187,7 +187,7 @@ const sampleProducts = [
       maxAmbientTemp: 60,
       workingTempRange: "+10°C to +60°C"
     },
-    images: ["/images/products/panel-ac.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/349697988/HZ/GH/UD/191739580/autoblie-harness-500x500.png"],
     price: 11000,
     inStock: true,
     applications: ["Electrical Enclosures", "Control Cabinets", "Telecom Booths"],
@@ -206,7 +206,7 @@ const sampleProducts = [
       maxAmbientTemp: 45,
       workingTempRange: "10°C to 50°C"
     },
-    images: ["/images/products/water-chiller.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/349691198/UM/NK/GZ/191739580/water-cooled-scroll-chiller-500x500.jpeg"],
     price: 85000,
     inStock: true,
     applications: ["Heavy Machinery Cooling", "Plastics & Moulding", "Chemical Processing"],
@@ -225,7 +225,7 @@ const sampleProducts = [
       maxAmbientTemp: 45,
       workingTempRange: "10°C to 50°C"
     },
-    images: ["/images/products/water-chiller.png"],
+    images: ["https://5.imimg.com/data5/SELLER/Default/2023/10/350533873/IM/GZ/KG/191739580/water-soluble-coolant-chiller-500x500.jpg"],
     price: 80000,
     inStock: true,
     applications: ["CNC Machining Centers", "Grinding Sump Systems", "Metal Cutting Machines"],

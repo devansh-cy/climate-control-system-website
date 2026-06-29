@@ -20,8 +20,6 @@ export default function Navbar() {
   const links = [
     { label: "Products", href: isHome ? "#products" : "/#products" },
     { label: "Manufacturing", href: isHome ? "#manufacturing" : "/#manufacturing" },
-    { label: "Why CCSI", href: isHome ? "#why-us" : "/#why-us" },
-    { label: "Industries", href: isHome ? "#industries" : "/#industries" },
     { label: "Contact", href: isHome ? "#contact" : "/#contact" },
   ];
 
