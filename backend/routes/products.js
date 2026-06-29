@@ -46,11 +46,14 @@ router.get('/', async (req, res, next) => {
     const limitNum = parseInt(limit, 10) || 10;
     const skip = (pageNum - 1) * limitNum;
 
-    const total = await Product.countDocuments(query);
-    const products = await Product.find(query)
-      .sort(sortOption)
-      .skip(skip)
-      .limit(limitNum);
+    const [total, products] = await Promise.all([
+      Product.countDocuments(query),
+      Product.find(query)
+        .sort(sortOption)
+        .skip(skip)
+        .limit(limitNum)
+        .lean()
+    ]);
     
     const pages = Math.ceil(total / limitNum);
 
@@ -72,7 +75,7 @@ router.get('/', async (req, res, next) => {
 // GET /api/products/featured - Get top 6 featured products
 router.get('/featured', async (req, res, next) => {
   try {
-    const featuredProducts = await Product.find({ featured: true }).limit(6);
+    const featuredProducts = await Product.find({ featured: true }).limit(6).lean();
     res.json({
       success: true,
       data: featuredProducts
@@ -85,7 +88,7 @@ router.get('/featured', async (req, res, next) => {
 // GET /api/products/:id - Get a single product by ID
 router.get('/:id', async (req, res, next) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id).lean();
     if (!product) {
       return res.status(404).json({ success: false, message: 'Product not found' });
     }

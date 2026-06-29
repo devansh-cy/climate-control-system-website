@@ -77,7 +77,7 @@ app.use('/api/contact', formSubmitLimiter);
     }
   }
 
-  mongoose.connect(dbUri)
+  mongoose.connect(dbUri, { maxPoolSize: 50 })
     .then(() => {
       console.log('Connected to MongoDB');
       
