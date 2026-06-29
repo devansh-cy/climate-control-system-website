@@ -53,6 +53,9 @@ const productSchema = new mongoose.Schema({
   material: {
     type: String
   },
+  hsnCode: {
+    type: String
+  },
   relatedProducts: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Product'

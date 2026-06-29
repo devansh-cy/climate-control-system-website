@@ -63,7 +63,8 @@ const staticProducts = [
       "NC SPM",
       "Hydraulic Press"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84181010"
   },
   {
     "_id": "p2",
@@ -97,7 +98,8 @@ const staticProducts = [
       "Industrial Machinery Cooling",
       "Gearbox Cooling"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84181010"
   },
   {
     "_id": "p3",
@@ -139,7 +141,8 @@ const staticProducts = [
       "NC SPM",
       "Hydraulic Press"
     ],
-    "material": "Copper"
+    "material": "Copper",
+    "hsnCode": "84181010"
   },
   {
     "_id": "p4",
@@ -187,7 +190,8 @@ const staticProducts = [
       "NC SPM",
       "Hydraulic Press"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84181010"
   },
   {
     "_id": "p5",
@@ -224,7 +228,8 @@ const staticProducts = [
       "Automation Enclosures",
       "Operator Cabins"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84191110"
   },
   {
     "_id": "p6",
@@ -264,7 +269,8 @@ const staticProducts = [
       "Automation Enclosures",
       "Server Cabinets"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84191110"
   },
   {
     "_id": "p7",
@@ -304,7 +310,8 @@ const staticProducts = [
       "Enclosures in Dusty Environments",
       "Process Control Rooms"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84191110"
   },
   {
     "_id": "p8",
@@ -339,7 +346,8 @@ const staticProducts = [
       "Medical Lasers",
       "Industrial Packaging Lines"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84181010"
   },
   {
     "_id": "p9",
@@ -372,7 +380,8 @@ const staticProducts = [
       "Extrusion Lines",
       "Centralized Industrial Cooling"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84181010"
   },
   {
     "_id": "p10",
@@ -408,7 +417,8 @@ const staticProducts = [
       "Control Cabinets",
       "Telecom Booths"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84191110"
   },
   {
     "_id": "p11",
@@ -443,7 +453,8 @@ const staticProducts = [
       "Plastics & Moulding",
       "Chemical Processing"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84181010"
   },
   {
     "_id": "p12",
@@ -478,7 +489,8 @@ const staticProducts = [
       "Grinding Sump Systems",
       "Metal Cutting Machines"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "84181010"
   },
   {
     "_id": "p13",
@@ -511,7 +523,8 @@ const staticProducts = [
       "Printing Press Areas",
       "Food & Chemical Preservation"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "8421"
   },
   {
     "_id": "p14",
@@ -544,7 +557,8 @@ const staticProducts = [
       "Paint Spray Systems",
       "Textile Manufacturing"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "8421"
   },
   {
     "_id": "p15",
@@ -577,7 +591,8 @@ const staticProducts = [
       "IT Industries",
       "Telecom Sector"
     ],
-    "material": "Mild Steel"
+    "material": "Mild Steel",
+    "hsnCode": "8421"
   }
 ];
 
@@ -762,6 +777,25 @@ export default function Home() {
               <a href="#contact" className="btn-outline">
                 Request a Quote
               </a>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Climate+Control+System+India+Pune+Maharashtra" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-outline"
+                style={{ display: "inline-flex", alignItems: "center", gap: "8px", verticalAlign: "middle" }}
+              >
+                <svg 
+                  className="w-5 h-5" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor" 
+                  style={{ width: "16px", height: "16px", color: "var(--primary)" }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Find Us on Map
+              </a>
             </div>
           </div>
           <div className="hero-image">
@@ -889,6 +923,49 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== HSN CODES COMPLIANCE ===== */}
+      <section className="section section-alt" id="hsn-compliance" style={{ borderTop: "1px solid var(--border)", background: "#f8fafd" }}>
+        <div className="container">
+          <div className="section-header" style={{ marginBottom: "30px", textAlign: "center" }}>
+            <div className="section-label">GST & Customs Compliance</div>
+            <h2 className="section-title" style={{ position: "relative", display: "inline-block", paddingBottom: "10px" }}>
+              Deals in HSN Code
+              <span style={{ content: '""', position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "40px", height: "3px", backgroundColor: "var(--primary)" }}></span>
+            </h2>
+          </div>
+          <div className="table-responsive" style={{ overflowX: "auto", background: "white", borderRadius: "var(--radius-md)", boxShadow: "var(--shadow-sm)", border: "1px solid var(--border)" }}>
+            <table className="hsn-table" style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
+              <thead>
+                <tr style={{ background: "#2e3192", color: "white" }}>
+                  <th style={{ padding: "16px 20px", fontWeight: "600", fontSize: "14px", width: "20%" }}>HSN Code</th>
+                  <th style={{ padding: "16px 20px", fontWeight: "600", fontSize: "14px" }}>HSN Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: "1px solid #eee" }}>
+                  <td style={{ padding: "18px 20px", fontWeight: "600", color: "var(--text-dark)", fontSize: "14px" }}>84181010</td>
+                  <td style={{ padding: "18px 20px", color: "var(--text-light)", fontSize: "14px", lineHeight: "1.6" }}>
+                    Refrigerators, freezers and other refrigerating or freezing equipment, electric or other; heat pumps other than air conditioning machines of heading 8415 8418 10 - combined refrigerator-freezers, fitted with separate external doors: commercial type
+                  </td>
+                </tr>
+                <tr style={{ borderBottom: "1px solid #eee" }}>
+                  <td style={{ padding: "18px 20px", fontWeight: "600", color: "var(--text-dark)", fontSize: "14px" }}>84191110</td>
+                  <td style={{ padding: "18px 20px", color: "var(--text-light)", fontSize: "14px", lineHeight: "1.6" }}>
+                    Machinery, plant or laboratory equipment, whether or not electrically heated (excluding furnaces, ovens and other equipment of heading 8514), for the treatment of materials by a process involving a change of temperature such as heating, cooking, roasting, distilling, rectifying, sterilising, pasteurising, steaming, drying, evaporating, vaporising, condensing or cooling, other than machinery or plant of a kind used for domestic purposes; instantaneous or storage water heaters, non-electric: 8419 11 - instantaneous gas water heaters : domestic type
+                  </td>
+                </tr>
+                <tr>
+                  <td style={{ padding: "18px 20px", fontWeight: "600", color: "var(--text-dark)", fontSize: "14px" }}>8421</td>
+                  <td style={{ padding: "18px 20px", color: "var(--text-light)", fontSize: "14px", lineHeight: "1.6" }}>
+                    Centrifuges, including centrifugal dryers; filtering or purifying machinery and apparatus, for liquids or gases
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -1257,6 +1334,12 @@ export default function Home() {
                           <tr>
                             <td className="specs-label">Cooling Type</td>
                             <td className="specs-value">{selectedProduct.specifications.coolingType}</td>
+                          </tr>
+                        )}
+                        {selectedProduct.hsnCode && (
+                          <tr>
+                            <td className="specs-label">HSN Code</td>
+                            <td className="specs-value" style={{ fontWeight: "bold", color: "var(--primary)" }}>{selectedProduct.hsnCode}</td>
                           </tr>
                         )}
                       </tbody>
